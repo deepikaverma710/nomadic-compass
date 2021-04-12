@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {authMethods} from '../firebase/authMethods'
 
 export const firebaseAuth = React.createContext()
-const contextIndex = (props) => {
+const ContextIndex = (props) => {
     const [inputs, setInputs] = useState({email: '', password: ''})
     const [errors, setErrors] = useState([])
     const [token, setToken] = useState(window.localStorage.token)
@@ -27,4 +27,4 @@ const contextIndex = (props) => {
             );
         };
         
-        export default contextIndex;
+        export default ContextIndex;
