@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {firebaseAuth} from '../context/ContextIndex'
 
-const Home = () => {
+const Home = (props) => {
+    const {onLogOutClicked} = useContext(firebaseAuth)
   return (
     <div>
-      Home Page
+      Welcome!
+      <button onClick={onLogOutClicked}>sign out </button>
     </div>
   );
 };

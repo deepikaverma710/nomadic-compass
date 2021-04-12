@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {firebaseAuth} from '../provider/AuthProvider'
+import {firebaseAuth} from '../context/ContextIndex'
 import { useHistory } from "react-router-dom";
 
 
