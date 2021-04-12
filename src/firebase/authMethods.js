@@ -15,5 +15,17 @@ export const authMethods = {
           setErrors(prev => ([...prev, err.message]))
         })
       },
+
+      login: (email, password, setErrors, setToken) => {
+        firebase.auth().signInWithEmailAndPassword(email,password) 
+          .then( async res => {
+            const token = firebase.auth().currentUser.uid
+              await localStorage.setItem('token', token)
+              setToken(window.localStorage.token)
+          })
+          .catch(err => {
+            setErrors(prev => ([...prev, err.message]))
+          })
+        },
     
     }

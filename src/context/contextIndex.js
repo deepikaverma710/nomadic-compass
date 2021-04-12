@@ -12,10 +12,16 @@ const ContextIndex = (props) => {
         authMethods.register(inputs.email, inputs.password, setErrors,setToken);
     }
     
+    //========Login===============//
+    const onLoginClicked = () => {
+        authMethods.login(inputs.email, inputs.password, setErrors, setToken)
+    }
+    
     return (
     <firebaseAuth.Provider
     value={{
         onRegisterClicked,
+        onLoginClicked,
         inputs,
         setInputs,
         errors,
