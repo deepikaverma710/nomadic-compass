@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ContextIndex from './context/ContextIndex';
+import {BrowserRouter} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
+  <ContextIndex>
     <App />
-  </React.StrictMode>,
+  </ContextIndex>
+</BrowserRouter>,
   document.getElementById('root')
 );
 
