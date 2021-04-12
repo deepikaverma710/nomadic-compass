@@ -1,0 +1,11 @@
+.Styles-header-top {
+    padding: 10px 0;
+    background: rgba(155, 16, 16, 0.7) none repeat scroll 0 0;
+}
+.Styles-row{
+    display: grid;
+}
+.Styles-header-top-right {
+    opacity: 1;
+    position: relative;
+}
