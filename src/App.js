@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
 import { Redirect,Route, Switch} from 'react-router-dom'
 import {firebaseAuth} from './context/ContextIndex'
-import Register from './components/Register'
-import Home from './components/Home'
-import Login from './components/Login'
+import Register from './components/auth/Register'
+import Home from './components/home/Home'
+import Login from './components/auth/Login'
 
 function PrivateRoute({component: Component, token, ...rest}) {
   return(
