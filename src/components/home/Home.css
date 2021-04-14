@@ -1,0 +1,12 @@
+.hero-image{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-image: url("../../images/camp.jpg");
+    height: 100%;
+}
+
+body, html {
+    height: 100%;
+}
