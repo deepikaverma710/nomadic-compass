@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Navigation from '../../components/navigation/Navigation';
+import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 
 const Cart = () => {
     const tourPackages= [{
@@ -70,13 +71,31 @@ const Cart = () => {
                   "tripStatus": "Active"
               }]
     }]
-    // const [qty, setQty] = useState(1)
-    const qty=3
+    const [qty, setQty] = useState(1)
+    const [minusButton, setMinusButton] = useState(false)
+    const [plusButton, setPlusButton] = useState(false)
+    const qtyAddtion =() => {
+        setMinusButton(false)
+        const newQty= qty+1;
+        setQty(newQty);
+    }
+
+    const qtySubtraction=()=>{
+        if (qty<2){
+            setMinusButton(true)
+        }
+        else{
+        const newQty=qty-1;
+        setQty(newQty);
+        }
+    }
+
+
 
   return (
       <div className="hero-image">  
         <Navigation/>
-        <table class="table bg-white">
+        <table className="table bg-white">
   <thead>
     <tr>
       <th scope="col">Package</th>
@@ -93,7 +112,21 @@ const Cart = () => {
       <th scope="row">{a.packageName}</th>
       <td>Manali</td>
       <td>Camping</td>
-      <td>{3}</td>
+      <td>
+          <button 
+          disabled={minusButton} 
+          className= "pb-1 border-0 bg-white" 
+          onClick={qtySubtraction}>
+              <FaMinusCircle />
+              </button >
+              {qty}
+              <button 
+              disabled={plusButton}
+              className="border-0 bg-white" 
+              onClick={qtyAddtion}>
+                  <FaPlusCircle />
+                  </button>
+                  </td>
       <td>{a.budget}</td>
       <td>{qty*a.budget}</td>
       <td className="text-right"><button>See details</button><button>Remove</button></td>
