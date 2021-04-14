@@ -13,7 +13,7 @@ const Details = () => {
         <div>
         <div className="trip-information">
             <div className="container">
-
+                <p>test</p>
             </div>
         </div>
     </div>
