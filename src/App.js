@@ -2,9 +2,9 @@ import React, {useContext} from 'react';
 import { Redirect,Route, Switch} from 'react-router-dom'
 import {firebaseAuth} from './context/ContextIndex'
 import Register from './components/auth/Register'
-import Home from './components/home/Home'
+import Home from './pages/home/Home'
 import Login from './components/auth/Login'
-import Details from './components/productDetails/Details';
+import Details from './pages/productDetails/Details';
 
 function PrivateRoute({component: Component, token, ...rest}) {
   return(

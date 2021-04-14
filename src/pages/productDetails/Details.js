@@ -1,8 +1,8 @@
 import React from 'react';
-import Search from '../activitySearch/Search';
-import Navigation from '../navigation/Navigation';
-import "../productDetails/Details.css";
-import Overview from '../tripOverview/Overview';
+import Search from '../../components/activitySearch/Search';
+import Navigation from '../../components/navigation/Navigation';
+import "./Details.css";
+import Overview from '../../components/tripOverview/Overview';
 
 
 const Details = () => {
@@ -14,12 +14,11 @@ const Details = () => {
         <div>
             <div className="trip-information">
                 <div className="container">
-                <div class="col-md-6">
-                    <Overview />
+                    <Overview/>
                 </div>
             </div>
+            
         </div>
-    </div>
     </div>
   );
 
