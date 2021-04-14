@@ -1,28 +1,26 @@
 import React, {useContext} from 'react';
-import {firebaseAuth} from '../context/ContextIndex'
+import {firebaseAuth} from '../../context/ContextIndex'
 import { useHistory } from "react-router-dom";
 
-
-const Login = (props) => {
+const Register = (props) => {
     let history = useHistory();
-    const {onLoginClicked, inputs, setInputs, errors} = useContext(firebaseAuth)
-
+    const {onRegisterClicked, inputs, setInputs, errors} = useContext(firebaseAuth)
+    
     const onInputSubmit = async(e) => {
         e.preventDefault()
-        await onLoginClicked()
-        setTimeout(() => { history.push("/"); ; }, 1000);
-        console.log('handleSubmit')
+        await onRegisterClicked()
+        setTimeout(() => { history.push("/") }, 1000);
+    }
     
-      }
-      const onInputChange = e => {
+    const onInputChange = e => {
         const {name, value} = e.target
         console.log(inputs)
         setInputs(prev => ({...prev, [name]: value}))
-      }
-
-      return (
+    }
+    
+    return (
         <>
-        <h1 className="text-center mt-2">Login</h1>
+        <h1 className="text-center mt-2">Register</h1>
     <div className="container border p-4" >
     <form onSubmit={onInputSubmit}  >
       <label 
@@ -50,7 +48,7 @@ const Login = (props) => {
       value={inputs.password} 
       />
       <button className="mt-2  justify-content-center">
-          Login
+          Register
           </button>
           {errors.length > 0 ? errors.map(error => <p style={{color: 'red'}}>{error}</p> ) : null}
           </form>
@@ -58,12 +56,12 @@ const Login = (props) => {
               Have an account?
               <button 
               className="mt-2"
-              onClick={(e)=>{e.preventDefault();props.history.push('/register')}}>
-                  Register
+              onClick={(e)=>{e.preventDefault();props.history.push('/signin')}}>
+                  Login
                   </button>
                   </p>
                   </div>
                   </>
                   );
                 };
-export default Login;
+                export default Register;

@@ -1,0 +1,14 @@
+.hero-image{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-image: url("../../images/camping4.jpg");
+    height: 100%;
+}
+
+.trip-information{
+    background: #edecec url("../../images/camp.jpg") no-repeat scroll right top / 58% 100%;
+    padding-bottom: 96px;
+    padding-top: 80px;
+}
