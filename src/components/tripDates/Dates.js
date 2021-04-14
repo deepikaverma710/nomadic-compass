@@ -1,5 +1,5 @@
 import React from 'react';
-import '../bookDates/Dates.css';
+import './Dates.css';
 
 const Dates = () => {
 
