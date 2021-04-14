@@ -1,7 +1,7 @@
 import React from 'react';
 import "../home/Home.css";
-import Navigation from '../navigation/Navigation';
-import Search from '../activitySearch/Search';
+import Navigation from '../../components/navigation/Navigation';
+import Search from '../../components/activitySearch/Search';
 import { getAllActivities, addNewActivity } from '../../network';
 
 
