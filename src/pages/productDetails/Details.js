@@ -3,6 +3,7 @@ import Search from '../../components/activitySearch/Search';
 import Navigation from '../../components/navigation/Navigation';
 import "./Details.css";
 import Overview from '../../components/tripOverview/Overview';
+import Inclusion from '../../components/tripInclusions/Inclusion';
 
 
 const Details = () => {
@@ -17,8 +18,12 @@ const Details = () => {
                     <Overview/>
                 </div>
             </div>
-            
-        </div>
+            <div className="trip-inclusions">
+                <div className="container">
+                    <Inclusion/>
+                </div>
+             </div>
+          </div>
     </div>
   );
 
