@@ -2,6 +2,7 @@ import React from 'react';
 import Search from '../activitySearch/Search';
 import Navigation from '../navigation/Navigation';
 import "../productDetails/Details.css";
+import Overview from '../tripOverview/Overview';
 
 
 const Details = () => {
@@ -11,9 +12,11 @@ const Details = () => {
         <Navigation></Navigation>
         <Search/>
         <div>
-        <div className="trip-information">
-            <div className="container">
-                <p>test</p>
+            <div className="trip-information">
+                <div className="container">
+                <div class="col-md-6">
+                    <Overview />
+                </div>
             </div>
         </div>
     </div>
