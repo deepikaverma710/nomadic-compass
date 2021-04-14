@@ -4,6 +4,7 @@ import {firebaseAuth} from './context/ContextIndex'
 import Register from './components/auth/Register'
 import Home from './components/home/Home'
 import Login from './components/auth/Login'
+import Details from './components/productDetails/Details';
 
 function PrivateRoute({component: Component, token, ...rest}) {
   return(
@@ -24,6 +25,7 @@ return (
   <PrivateRoute exact path='/' component = {Home} token={token} />
   <Route exact path='/register' component={Register} />
   <Route exact path='/login' component={Login} />
+  <Route exact path='/details' component={Details} />
   </Switch>
   );
 }

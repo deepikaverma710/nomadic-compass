@@ -1,28 +1,18 @@
-import React, {useContext} from 'react';
-import {firebaseAuth} from '../../context/ContextIndex'
-import "../home/Home.css"
-import { BsPencilSquare, BsFillLockFill } from "react-icons/bs";
-import { FaShoppingCart } from "react-icons/fa";
+import React from 'react';
+import "../home/Home.css";
+import Navigation from '../navigation/Navigation';
+import Search from '../activitySearch/Search';
 
-const Home = (props) => {
-    const {onLogOutClicked} = useContext(firebaseAuth)
-  
+
+const Home = () => {
+
   return (
-    <div>   
-            <div className="Home-header-bar">
-                <div className="Home-header-container">
-                  <div className="Home-header-text row">
-                        <FaShoppingCart/>
-                        <p>2 /</p>
-                        <BsFillLockFill/>
-                        <p onClick={onLogOutClicked}>Sign out /</p>              
-                        <BsPencilSquare/>
-                        <p>Register</p>                
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div className="hero-image">     
+        <Navigation/>
+        <Search /> 
+      </div>
   );
+
 };
 
 export default Home;
