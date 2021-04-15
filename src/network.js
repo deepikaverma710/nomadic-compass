@@ -4,7 +4,6 @@ const apiUrl = process.env.REACT_APP_HEROKU_API_URL
 
 export async function getAllActivities() {
     try {
-      console.log(apiUrl)
       const result = await axios.get(`${apiUrl}api/activities`,{
           headers:{
             "Access-Control-Allow-Origin": "*"
@@ -17,6 +16,23 @@ export async function getAllActivities() {
       alert(error.message)
     }
   }
+
+  export async function getAllDestinations(activityName) {
+    try {
+      const result = await axios.get(`${apiUrl}api/activities/${activityName}`,{
+          headers:{
+            "Access-Control-Allow-Origin": "*"
+          }
+      })
+      const newResult = result.data.destinations[0].destinations
+      console.log(newResult)
+      return newResult
+    } catch (error) {
+      console.log(error)
+      alert(error.message)
+    }
+  }
+
   
   export async function addNewActivity(){
     try {
