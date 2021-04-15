@@ -1,5 +1,5 @@
 import React from 'react';
-import "../home/Home.css";
+import "./Home.css";
 import { getAllActivities, addNewActivity } from '../../network';
 import Navigation from '../../components/navigation/Navigation';
 import Search from '../../components/activitySearch/Search';
@@ -12,11 +12,14 @@ const Home = () => {
   }
 
   return (
-      <div className="hero-image">  
+    <div className="hero-image">
+      <div >  
       <button onClick={onClickActivity}>Get All Activities</button>
       <button onClick={addNewActivity}>Get All Activities</button>   
         <Navigation />
-        <Search />
+        <Search />      
+      </div>
+      <div className="footer">Footer</div>
       </div>
   );
 

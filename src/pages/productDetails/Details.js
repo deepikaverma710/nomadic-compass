@@ -10,7 +10,7 @@ import Dates from '../../components/tripDates/Dates';
 const Details = () => {
 
   return (
-    <div className="hero-image">
+    <div className="details-header-image">
         <Navigation></Navigation>
         <Search/>
         <div>
