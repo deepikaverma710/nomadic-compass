@@ -1,15 +1,17 @@
 import React from "react";
 import "../activitySearch/Search.css";
 
-const Search = ({type, data, handleActivityChange}) => {
+const Search = ({type, data, handleChange}) => {
 
     console.log(data)
 
-    const activities = data.map(item => {
+    const categories = data.map(item => {
         if(type === "activity")
         return <option key={item.activityName} value={item.activityName}> {item.activityName} </option>
         else if(type==="destination")
         return <option key={item.destinationName} value={item.destinationName}> {item.destinationName} </option>
+       
+        return <option key={item.packageName} value={item.packageName}> {item.packageName} </option>
     }
     )      
 
@@ -21,8 +23,8 @@ const Search = ({type, data, handleActivityChange}) => {
 
   return (
       <div className="activity-cat">
-        <select name="category"  className="search-adventure" onChange={handleActivityChange} >
-          {activities}
+        <select name="category"  className="search-adventure" onChange={handleChange} placeholder={`Select ${type}`}>
+          {categories}
         </select>
       </div>
   );

@@ -17,14 +17,30 @@ export async function getAllActivities() {
     }
   }
 
-  export async function getAllDestinations(activityName) {
+  export async function getAllDestinations(activity) {
     try {
-      const result = await axios.get(`${apiUrl}api/activities/${activityName}`,{
+      const result = await axios.get(`${apiUrl}api/activities/${activity}`,{
           headers:{
             "Access-Control-Allow-Origin": "*"
           }
       })
       const newResult = result.data.destinations[0].destinations
+      console.log(newResult)
+      return newResult
+    } catch (error) {
+      console.log(error)
+      alert(error.message)
+    }
+  }
+
+  export async function getAllPackages(activity,destination) {
+    try {
+      const result = await axios.get(`${apiUrl}api/activities/${activity}/${destination}`,{
+          headers:{
+            "Access-Control-Allow-Origin": "*"
+          }
+      })
+      const newResult = result.data.packages[0].destinations[0].tourPackages
       console.log(newResult)
       return newResult
     } catch (error) {
