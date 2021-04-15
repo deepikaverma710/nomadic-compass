@@ -41,3 +41,20 @@ export async function getAllActivities() {
       console.log(error)
     }
   } 
+
+  export async function getCartByUid(uid) {
+    console.log(uid)
+    try {
+      const result = await axios.get(`${apiUrl}api/user/${uid}`,{
+          headers:{
+            "Access-Control-Allow-Origin": "*"
+          }
+      })
+      console.log(result.data.cart)
+      const newResult = result.data.cart
+      return newResult
+    } catch (error) {
+      console.log(error)
+      alert(error.message)
+    }
+  }

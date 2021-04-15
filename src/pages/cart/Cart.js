@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Navigation from '../../components/navigation/Navigation';
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Modal, Button } from 'react-bootstrap'
+import {firebaseAuth} from '../../context/ContextIndex'
+
 
 const Cart = () => {
     const tourPackage = [
@@ -74,6 +76,7 @@ const Cart = () => {
         }
     ]
 
+    const {cart} = useContext(firebaseAuth)
     let total = 0
     const [show, setShow] = useState(false);
 
@@ -100,15 +103,19 @@ const Cart = () => {
     //     }
     // }
 
-
+    useEffect(() => {
+        console.log(cart)
+    }, []);
 
     return (
         <div>
             <div className="hero-image">
                 <Navigation />
             </div>
+            {cart.map(a=>a.cartList.map(b=>b.dateId))}
             <div className="table-responsive-lg">
                 <table className="table">
+                    
 
 
                     <thead>
@@ -168,7 +175,7 @@ const Cart = () => {
         <Modal.Body>
             <ul className="list-unstyled">
             {tourPackage.map(a =>
-            <li >
+            <li key={a._id}>
                 {a.destinations[0].tourPackages[0].packageName}
                 </li>
                 )}
