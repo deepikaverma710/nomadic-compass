@@ -4,12 +4,12 @@ const apiUrl = process.env.REACT_APP_HEROKU_API_URL
 
 export async function getAllActivities() {
     try {
+      console.log(apiUrl)
       const result = await axios.get(`${apiUrl}api/activities`,{
           headers:{
             "Access-Control-Allow-Origin": "*"
           }
       })
-      console.log(result.data.activities)
       const newResult = result.data.activities
       return newResult
     } catch (error) {
