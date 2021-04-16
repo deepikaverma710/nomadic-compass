@@ -1,32 +1,40 @@
 import React from "react";
 import "./Dates.css";
+import { Link } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
 const Dates = ({ details }) => {
+  const {  selectedActivity, selectedDestination } = useParams()
   console.log(details);
-
-//   const dates = details.map((d) => {
-//       const date = d.departureDate
-//       const status = d.tripStatus
-//       return (
-// <tr>
-//       <td class="trip-date">
-//         <div> {date} </div>
-//       </td>
-//       <td class="trip-status">
-//         <div> {status} </div>
-//       </td>
+  const dates = details.map((d) => {
+      const date = d.departureDate
+      const status = d.tripStatus
+      return (
+<tr>
+      <td class="trip-date">
+        <div> {date} </div>
+      </td>
+      <td class="trip-status">
+        <div> {status} </div>
+      </td>
      
-//       <td class="trip-action">
-//         <div>
-//           <button class="booking-button-two" type="submit">
-//             Book now
-//           </button>
-//         </div>
-//       </td>
-//     </tr>
-//       )
+      <td class="trip-action">
+        <div>
+        <Link
+                      to={{
+                        pathname:  `/summary/${selectedActivity}/${selectedDestination}/${d._id}`,
+                        }}>
+
+          <button class="booking-button-two" type="submit">
+            Book now
+          </button>
+          </Link>
+        </div>
+      </td>
+    </tr>
+      )
     
-//   });
+  });
 
 //   console.log(dates)
 
@@ -72,7 +80,7 @@ const Dates = ({ details }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {/* {dates} */}
+                  {dates}
                 </tbody>
               </table>
             </div>

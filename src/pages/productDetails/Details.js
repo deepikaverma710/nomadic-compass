@@ -16,7 +16,8 @@ useEffect(() => {
   (async () => {
     const date = await getPackageDates(selectedActivity, selectedDestination, selectedPackage)
     // act.map((a) => console.log(a.activityName));
-    setDates(date);
+    setDates(date) 
+    
   })().catch((err) => {
     console.error(err);
   });
@@ -41,7 +42,8 @@ console.log(dates)
             </div>
             <div className="trip-dates section-padding">
                 <div className="container">
-                    <Dates details={dates.dates}/>
+                <Dates details={dates.dates}/>
+                    
                 </div>
             </div>
           </div>

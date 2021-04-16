@@ -86,3 +86,92 @@ export async function getAllActivities() {
       console.log(error)
     }
   } 
+
+  export async function getCartByUid(uid) {
+    console.log(uid)
+    try {
+      const result = await axios.get(`${apiUrl}api/user/${uid}`,{
+          headers:{
+            "Access-Control-Allow-Origin": "*"
+          }
+      })
+      console.log(result.data.cart)
+      const newResult = result.data.cart
+      return newResult
+    } catch (error) {
+      console.log(error)
+      alert(error.message)
+    }
+  }
+
+  export async function getPackages(uid, dateid) {
+    try {
+      const result = await axios.get(`${apiUrl}api/user/${uid}/${dateid}`,{
+          headers:{
+            "Access-Control-Allow-Origin": "*"
+          }
+      })
+      console.log(result.data.packages)
+      const newResult = result.data.packages
+      return newResult
+    } catch (error) {
+      console.log(error)
+      alert(error.message)
+    }
+  }
+
+  export async function incQuantity(cartListId) {
+    try {
+      const result = await axios.post(`${apiUrl}api/user/inc/${cartListId}`,{
+          headers:{
+            "Access-Control-Allow-Origin": "*"
+          }
+      })
+      return result
+    } catch (error) {
+      console.log(error)
+      alert(error.message)
+    }
+  }
+
+  export async function decQuantity(cartListId) {
+    try {
+      const result = await axios.post(`${apiUrl}api/user/dec/${cartListId}`,{
+          headers:{
+            "Access-Control-Allow-Origin": "*"
+          }
+      })
+      return result
+    } catch (error) {
+      console.log(error)
+      alert(error.message)
+    }
+  }
+
+  export async function deleteCartListItem(cartListId) {
+    try {
+      const result = await axios.delete(`${apiUrl}api/user/deletecart/${cartListId}`,{
+          headers:{
+            "Access-Control-Allow-Origin": "*"
+          }
+      })
+      return result
+    } catch (error) {
+      console.log(error)
+      alert(error.message)
+    }
+  }
+
+    
+  export async function insertCartItem(uid, dateId, activityName, destinationName){
+    try {
+      const result = await axios.post(`${apiUrl}api/user/${uid}`, {
+        dateId: dateId,
+        activityName: activityName,
+        destinationName: destinationName
+      })
+      return result.data
+    } catch (error) {
+      console.log(error)
+    }
+  } 

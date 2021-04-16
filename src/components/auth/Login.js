@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import {firebaseAuth} from '../../context/ContextIndex'
 import { useHistory } from "react-router-dom";
+import Navigation from "../../components/navigation/Navigation"
 
 
 const Login = (props) => {
@@ -22,6 +23,11 @@ const Login = (props) => {
 
       return (
         <>
+        <div >
+        <Navigation />
+      </div>
+      <div  className="hero-image ">
+        <div className="bg-white">
         <h1 className="text-center mt-2">Login</h1>
     <div className="container border p-4" >
     <form onSubmit={onInputSubmit}  >
@@ -62,6 +68,8 @@ const Login = (props) => {
                   Register
                   </button>
                   </p>
+                  </div>
+                  </div>
                   </div>
                   </>
                   );
