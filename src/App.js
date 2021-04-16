@@ -5,6 +5,8 @@ import Register from './components/auth/Register'
 import Home from './pages/home/Home'
 import Login from './components/auth/Login'
 import Details from './pages/productDetails/Details';
+import Summary from './pages/packageSummary/Summary';
+
 
 function PrivateRoute({component: Component, token, ...rest}) {
   return(
@@ -26,6 +28,7 @@ return (
   <Route exact path='/register' component={Register} />
   <Route exact path='/login' component={Login} />
   <Route exact path='/details' component={Details} />
+  <Route exact path='/summary' component={Summary} />
   </Switch>
   );
 }
