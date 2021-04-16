@@ -1,3 +1,4 @@
+import firebaseconfig from './firebaseSDK'
 import firebase from 'firebase'
 
 export const authMethods = {
