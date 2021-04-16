@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from '../../components/navigation/Navigation';
 import "./Admin.css";
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Col } from 'react-bootstrap';
 
 const Admin = () => {
 
@@ -31,13 +31,9 @@ const Admin = () => {
   return (
     <div>
         <Navigation></Navigation>
-        <h1 className= "admin-heading text-center">Package Admin</h1>
+        <h1 className= "admin-heading text-center">Package Upload</h1>
         <div className= "admin-form container">
             <Form>
-                <Form.Group controlId="exampleForm.ControlInput1">
-                    <Form.Label>Package ID</Form.Label>
-                    <Form.Control type="ID" placeholder="PKG1234" />
-                </Form.Group>
                 <Form.Group controlId="exampleForm.ControlSelect1">
                     <Form.Label>Select Activity</Form.Label>
                     <Form.Control as="select">
@@ -63,9 +59,67 @@ const Admin = () => {
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Package Description</Form.Label>
                     <Form.Control as="textarea" rows={4} />
-                </Form.Group>                
+                </Form.Group>
+                <Form.Group controlId="exampleForm.ControlTextarea1">
+                    <Form.Row>
+                        <Col xs={6}>
+                        <Form.Label>Start Location</Form.Label>
+                        <Form.Control placeholder="City/Town/Village" />
+                        </Col>
+                        <Col>
+                        <Form.Label>End Location</Form.Label>
+                        <Form.Control placeholder="City/Town/Village" />
+                        </Col>
+                    </Form.Row>
+                    <Form.Row>
+                        <Col xs={6}>
+                        <Form.Label>Start Date for the package</Form.Label>
+                        <Form.Control placeholder="yy/mm/dd" />
+                        </Col>
+                        <Col xs={6}>
+                        <Form.Label>Maximum Number of people in a group</Form.Label>
+                        <Form.Control placeholder="Number" />
+                        </Col>
+                    </Form.Row>
+                    <Form.Row>
+                        <Col xs={4}>
+                        <Form.Label>Meals</Form.Label>
+                        <Form.Control placeholder="Number of meals included" />
+                        </Col>
+                        <Col xs={4}>
+                        <Form.Label>Transportation</Form.Label>
+                        <Form.Control placeholder="Type of transportation provided" />
+                        </Col>
+                        <Col xs={4}>
+                        <Form.Label>Accommodation</Form.Label>
+                        <Form.Control placeholder="Type of accommodation provided" />
+                        </Col>
+                    </Form.Row>
+                    <Form.Row>
+                        <Col xs={3}>
+                        <Form.Label>Group Size</Form.Label>
+                        <Form.Control placeholder="City/Town/Village" />
+                        </Col>
+                        <Col xs={3}>
+                        <Form.Label>Activity Level</Form.Label>
+                        <Form.Control as="select">
+                        <option>Easy</option>
+                        <option>Moderate</option>
+                        <option>Difficult</option>
+                        </Form.Control>
+                        </Col>
+                        <Col xs={3}>
+                        <Form.Label>Duration of the package</Form.Label>
+                        <Form.Control placeholder="Days" />
+                        </Col>
+                        <Col xs={3}>
+                        <Form.Label>Budget</Form.Label>
+                        <Form.Control placeholder="Cost of package in $" />
+                        </Col>
+                    </Form.Row>
+                </Form.Group>                 
             </Form>
-            
+
             <Button className="admin-button">Submit</Button>
         </div>
         
