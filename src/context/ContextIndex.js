@@ -9,7 +9,7 @@ const ContextIndex = (props) => {
     const [errors, setErrors] = useState([])
     const [token, setToken] = useState(window.localStorage.token)
     // const [tourPackages, setTourPackages] = useState([])
-    const [dates, setDates] = useState([])
+    const [cartCount, setCartCount] = useState([])
 
     // =======Register=============//
     const onRegisterClicked = () => {
@@ -48,11 +48,12 @@ const ContextIndex = (props) => {
         if(token != null ){
             (async () => {
            const newCart= await getCartByUid(token)
-        //    setCart(newCart)
-           const dateId = [newCart.map(a=>a.cartList.map(b=> { return b.dateId}))]
-           
-        //    newCart.map(a=>a.cartList.map(b=>setCartQty(cartQty+b.quantity)))
-        setDates(dateId[0][0])
+           const quantity = [newCart.map(a=>a.cartList.map(b=> { return b.quantity}))]
+           let count =0
+        console.log(quantity[0][0])
+        const total= quantity[0][0].map(a=> count= count+ a )
+        setCartCount(count)
+        console.log(`cart Count is ${count}`)
         })()
           }
     }, []);
@@ -68,8 +69,7 @@ const ContextIndex = (props) => {
         errors,
         token,
         setToken,
-        // tourPackages,
-        dates
+        cartCount
         }}>
             {props.children}
             </firebaseAuth.Provider>

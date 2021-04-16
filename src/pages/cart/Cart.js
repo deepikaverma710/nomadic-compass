@@ -9,81 +9,12 @@ import { getPackages, getCartByUid } from '../../network';
 
 
 const Cart = () => {
-  
-    // const tourPackage = [
-    //     {
-    //         _id: "60760e8143090445b5f0811d",
-    //         activityName: "New activiity ",
-    //         destinations: [
-    //             {
-    //                 _id: "60760e8143090445b5f0811e",
-    //                 destinationName: "new",
-    //                 tourPackages: [
-    //                     {
-    //                         _id: "60760e8143090445b5f0811f",
-    //                         packageName: "new package",
-    //                         packageDescription: "Description",
-    //                         packageHighlights: "Highlights",
-    //                         startLocation: "start here",
-    //                         finishLocation: "finish here",
-    //                         groupSize: 5,
-    //                         activityLevel: "Easy",
-    //                         duration: "5",
-    //                         budget: 10000,
-    //                         inclusions: "ABC, DEF",
-    //                         dates: [
-    //                             {
-    //                                 noOfPackageAdded: 2,
-    //                                 _id: "60760e8143090445b5f08120",
-    //                                 departureDate: "2021-04-13T21:34:57.104Z",
-    //                                 tripStatus: "Active"
-    //                             }
-    //                         ]
-    //                     }
-    //                 ]
-    //             }
-    //         ],
-    //     },
-    //     {
-    //         _id: "60760e8143090445b5f0811e",
-    //         activityName: "New activiity 2",
-    //         destinations: [
-    //             {
-    //                 _id: "60760e8143090445b5f0811e",
-    //                 destinationName: "new dest 2",
-    //                 tourPackages: [
-    //                     {
-    //                         _id: "60760e8143090445b5f0811f",
-    //                         packageName: "new package 2",
-    //                         packageDescription: "Description",
-    //                         packageHighlights: "Highlights",
-    //                         startLocation: "start here",
-    //                         finishLocation: "finish here",
-    //                         groupSize: 5,
-    //                         activityLevel: "Easy",
-    //                         duration: "5",
-    //                         budget: 20000,
-    //                         inclusions: "ABC, DEF",
-    //                         dates: [
-    //                             {
-    //                                 noOfPackageAdded: 3,
-    //                                 _id: "60760e8143090445b5f08120",
-    //                                 departureDate: "2021-04-13T21:34:57.104Z",
-    //                                 tripStatus: "Active"
-    //                             }
-    //                         ]
-    //                     }
-    //                 ]
-    //             }
-    //         ],
-    //     }
-    // ]
 
-    const { token, dates} = useContext(firebaseAuth)
+
+    const { token} = useContext(firebaseAuth)
     let total = 0
     const [show, setShow] = useState(false);
     const [tourPackages, setTourPackages] =useState([])
-    // const [tourPackage, setTourPackages] =useState([])
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -130,7 +61,6 @@ const Cart = () => {
       if(token != null ){
           (async () => {
          const newCart= await getCartByUid(token)
-      //    setCart(newCart)
          const dateId = [newCart.map(a=>a.cartList.map(b=> { return b.dateId}))]
          console.log(dateId[0][0])
          
