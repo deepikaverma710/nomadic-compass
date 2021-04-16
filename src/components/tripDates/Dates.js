@@ -4,31 +4,31 @@ import "./Dates.css";
 const Dates = ({ details }) => {
   console.log(details);
 
-  const dates = details.map((d) => {
-      const date = d.departureDate
-      const status = d.tripStatus
-      return (
-<tr>
-      <td class="trip-date">
-        <div> {date} </div>
-      </td>
-      <td class="trip-status">
-        <div> {status} </div>
-      </td>
+//   const dates = details.map((d) => {
+//       const date = d.departureDate
+//       const status = d.tripStatus
+//       return (
+// <tr>
+//       <td class="trip-date">
+//         <div> {date} </div>
+//       </td>
+//       <td class="trip-status">
+//         <div> {status} </div>
+//       </td>
      
-      <td class="trip-action">
-        <div>
-          <button class="booking-button-two" type="submit">
-            Book now
-          </button>
-        </div>
-      </td>
-    </tr>
-      )
+//       <td class="trip-action">
+//         <div>
+//           <button class="booking-button-two" type="submit">
+//             Book now
+//           </button>
+//         </div>
+//       </td>
+//     </tr>
+//       )
     
-  });
+//   });
 
-  console.log(dates)
+//   console.log(dates)
 
   return (
     <div>
@@ -72,7 +72,7 @@ const Dates = ({ details }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {dates}
+                  {/* {dates} */}
                 </tbody>
               </table>
             </div>

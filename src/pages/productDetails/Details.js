@@ -25,7 +25,7 @@ useEffect(() => {
 console.log(dates)
 
   return (
-    <div className="hero-image">
+    <div className="">
         <Navigation></Navigation>
      
         <div>

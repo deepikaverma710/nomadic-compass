@@ -4,8 +4,8 @@ import '../tripOverview/Overview.css';
 const Overview = ({details}) => {
 
 return (
-    <div className="trip-overview row">
-            <div class="col-md-6">
+    <div className="trip-overview">
+            {/* <div class="col-md-6">
             <div className="trip-info-left-text">
                 <div className="section-title text-center">
                     <div className="title-border">
@@ -20,21 +20,9 @@ return (
                     <li className="">{details.packageHighlights}</li>
                 </ul>
             </div>
-        </div>
+        </div> */}
         {/* Highlights */}
-        <div className="col-md-6">
-                <div className="trip-booking-info text-center">
-                    <h3>Duration</h3>
-                    <p>{details.duration}</p>
-                </div>
-                <div className="trip-booking-info text-center">
-                    <h3>Budget</h3>
-                    <p>{details.budget}</p>
-                </div>
-                <div className="button">
-                    <button >Book this trip</button>
-                </div>     
-        </div>
+        
     </div>
     );
 };

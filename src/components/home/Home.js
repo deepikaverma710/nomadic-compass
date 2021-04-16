@@ -9,6 +9,7 @@ import {
   getAllPackages,
 } from "../../network";
 import { Link } from "react-router-dom";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 
 const Home = () => {
   let history = useHistory();
@@ -81,6 +82,12 @@ const Home = () => {
 
   return (
     <div className="hero-image">
+      <div className="blurb">
+      <h1>Nomadic Compass Travels</h1>
+      <p>The simplest to book travel destinations.</p>
+      </div>
+      <div className="hero-image-inner">
+      <div className="search-wrap">
       <Search
         type="activity"
         data={activities}
@@ -101,13 +108,16 @@ const Home = () => {
         />
       )}
       <Link
+      className="search-btn"
         to={{
           pathname:  `/${selectedActivity}/${selectedDestination}/${selectedPackage}`,
         }}
       >
-        See Package Details
+        See Details &nbsp;<FaArrowAltCircleRight />
       </Link>
 
+      </div>
+      </div> 
       {/* <button onClick={seeDetails}>See</button> */}
     </div>
   );
