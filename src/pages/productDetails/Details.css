@@ -15,7 +15,9 @@
 }
 
 .trip-information{
-    background: #edecec url("../../images/camp.jpg") no-repeat scroll right top / 50% 100%;
+    background: #edecec url("../../images/camp-inner.jpeg") no-repeat  ;
+    background-size: cover;
+    background-position: center;
     padding-bottom: 96px;
     padding-top: 100px;
     position: relative;

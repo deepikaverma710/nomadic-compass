@@ -9,8 +9,53 @@ export async function getAllActivities() {
             "Access-Control-Allow-Origin": "*"
           }
       })
-      console.log(result.data.activities)
       const newResult = result.data.activities
+      return newResult
+    } catch (error) {
+      console.log(error)
+      alert(error.message)
+    }
+  }
+
+  export async function getAllDestinations(activity) {
+    try {
+      const result = await axios.get(`${apiUrl}api/activities/${activity}`,{
+          headers:{
+            "Access-Control-Allow-Origin": "*"
+          }
+      })
+      const newResult = result.data.destinations[0].destinations
+      return newResult
+    } catch (error) {
+      console.log(error)
+      alert(error.message)
+    }
+  }
+
+  export async function getAllPackages(activity,destination) {
+    try {
+      const result = await axios.get(`${apiUrl}api/activities/${activity}/${destination}`,{
+          headers:{
+            "Access-Control-Allow-Origin": "*"
+          }
+      })
+      const newResult = result.data.destination[0].tourPackages
+      return newResult
+    } catch (error) {
+      console.log(error)
+      alert(error.message)
+    }
+  }
+  
+
+  export async function getPackageDates(activity,destination,packageName) {
+    try {
+      const result = await axios.get(`${apiUrl}api/activities/${activity}/${destination}/${packageName}`,{
+          headers:{
+            "Access-Control-Allow-Origin": "*"
+          }
+      })
+      const newResult = result.data.selectedPackage[0]
       return newResult
     } catch (error) {
       console.log(error)
