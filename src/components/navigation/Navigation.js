@@ -12,8 +12,8 @@ const Navigation = (props) => {
   return (
     <div>   
         <div className="header-bar">
-            <div className="header-container">
-              <div className="header-text row">
+            <div className="container">
+              <div className="header row">
                     <FaShoppingCart/>
                     <p>2 /</p>
                     <BsFillLockFill/>
