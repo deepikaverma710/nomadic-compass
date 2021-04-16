@@ -35,6 +35,7 @@ return (
   <Route exact path='/:selectedActivity/:selectedDestination/:selectedPackage' component={Details} />
 
   <Route exact path='/summary' component={Summary} />
+  <Route exact path='/cart' component={Cart} />
 
   </Switch>
   );
