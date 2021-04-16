@@ -34,7 +34,7 @@ return (
 
   <Route exact path='/:selectedActivity/:selectedDestination/:selectedPackage' component={Details} />
 
-  <PrivateRoute exact path='/summary/:dateid' component={Summary} token={token}/>
+  <PrivateRoute exact path='/summary/:selectedActivity/:selectedDestination/:dateid' component={Summary} token={token}/>
   <PrivateRoute exact path='/cart' component={Cart} token={token} />
 
   </Switch>

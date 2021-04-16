@@ -1,9 +1,20 @@
-import React from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Navigation from '../../components/navigation/Navigation';
 import "./Summary.css";
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
+import {getPackages, insertCartItem} from "../../network";
+import { firebaseAuth } from '../../context/ContextIndex';
 
 const Summary = () => {
+    let history = useHistory();
+    const { token} = useContext(firebaseAuth)
+    const {  dateid, selectedActivity, selectedDestination } = useParams()
+
+    const addToCart = async(e)=>{
+        e.preventDefault()
+        await insertCartItem(token, dateid, selectedActivity, selectedDestination)
+        setTimeout(() => { history.push("/cart"); ; }, 1000);
+    }
 
     const tourPackage = {
         "_id": "60760e8143090445b5f0811f",
@@ -27,6 +38,15 @@ const Summary = () => {
                 "tripStatus": "Active"
             }
         }
+
+
+        useEffect(() => {
+            if (token != null) {
+              (async () => {
+                await getPackages(token, dateid)
+              })()
+           
+          }else{}}, []);
 
   return (
     <div className="summary-image">
@@ -61,7 +81,7 @@ const Summary = () => {
         </div>        
     </div>
         <div className="highlights text-center">
-            <button  type="submit">Add to Cart  </button>
+            <button  onClick = {addToCart}>Add to Cart  </button>
         </div>     
     </div>
   );

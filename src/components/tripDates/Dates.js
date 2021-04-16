@@ -1,10 +1,11 @@
 import React from "react";
 import "./Dates.css";
 import { Link } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
 const Dates = ({ details }) => {
+  const {  selectedActivity, selectedDestination } = useParams()
   console.log(details);
-
   const dates = details.map((d) => {
       const date = d.departureDate
       const status = d.tripStatus
@@ -21,7 +22,7 @@ const Dates = ({ details }) => {
         <div>
         <Link
                       to={{
-                        pathname:  `/summary/${d._id}`,
+                        pathname:  `/summary/${selectedActivity}/${selectedDestination}/${d._id}`,
                         }}>
 
           <button class="booking-button-two" type="submit">
