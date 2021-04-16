@@ -150,7 +150,7 @@ export async function getAllActivities() {
 
   export async function deleteCartListItem(cartListId) {
     try {
-      const result = await axios.delete(`${apiUrl}api/user/deletecart/{cartListId}`,{
+      const result = await axios.delete(`${apiUrl}api/user/deletecart/${cartListId}`,{
           headers:{
             "Access-Control-Allow-Origin": "*"
           }

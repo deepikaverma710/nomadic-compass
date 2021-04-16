@@ -4,7 +4,7 @@ import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Modal, Button } from 'react-bootstrap';
 import { firebaseAuth } from '../../context/ContextIndex';
-import { getPackages, getCartByUid, incQuantity, decQuantity } from '../../network';
+import { getPackages, getCartByUid, incQuantity, decQuantity, deleteCartListItem } from '../../network';
 
 
 
@@ -140,7 +140,10 @@ const Cart = () => {
                     <td>{a[0].budget}</td>
                     <td>{quantity[i] * a[0].budget}</td>
                     <td className="d-none">{total = total + (quantity[i] * a[0].budget)}</td>
-                    <td className="text-right"><Link to="/details"><button>See details</button></Link><button>Remove</button></td>
+                    <td className="text-right"><Link to="/details"><button>See details</button></Link>
+                    <button
+                    onClick={(e)=>{e.preventDefault(); setReset(!reset); deleteCartListItem(cartId[i])}}>
+                      Remove</button></td>
                   </tr>
                 )
               } else { }
