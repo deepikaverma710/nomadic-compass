@@ -132,20 +132,21 @@ const Cart = () => {
          const newCart= await getCartByUid(token)
       //    setCart(newCart)
          const dateId = [newCart.map(a=>a.cartList.map(b=> { return b.dateId}))]
+         console.log(dateId[0][0])
          
       //    newCart.map(a=>a.cartList.map(b=>setCartQty(cartQty+b.quantity)))
          console.log(`Cart ${newCart}`)
          const abc=[1,2,3]
 
-         const newpackages= await Promise.all(abc.map(async (a)=>{if (!!a){
-           return await getPackages(token, "6077d4221ba51400043c02f8");
-      } else{}}))
+         const newpackages= await Promise.all(dateId[0][0].map(async (a)=>{if (!!a){
+           return await getPackages(token, a);
+      } else{return null}}))
 
         //  const newpackages=dateId[0][0].map(a=>{if (!!a){
         //      return  getPackages(token, "6077d4221ba51400043c02f8");
         //  } else{}})
          
-         setTimeout(() => { setTourPackages(newpackages) }, 7000);
+         setTimeout(() => { setTourPackages(newpackages) }, 1000);
       })()
         }
   }, []);
@@ -177,7 +178,7 @@ const Cart = () => {
   </thead>
   <tbody>
       {console.log(`helloo ${tourPackages}`)}
-  {tourPackages.map (a=> 
+  {tourPackages.map (a=> {if(!!a){ return(
   
     <tr key={a[0]._id}>
       <th scope="row">{a[0].packageName}</th>
@@ -203,7 +204,7 @@ const Cart = () => {
       <td className="d-none">{total = total + a[0].budget}</td>
       <td className="text-right"><button>See details</button><button>Remove</button></td>
     </tr>
-    )}
+  )}else{}})}
   </tbody>
 </table>
 </div>
@@ -227,11 +228,11 @@ const Cart = () => {
         </Modal.Header>
         <Modal.Body>
             <ul className="list-unstyled">
-            {tourPackages.map(a =>
+            {tourPackages.map(a => {if(!!a){ return(
             <li key={a[0]._id}>
                 {a[0].packageName}
                 </li>
-                )}
+            )}})}
                 <li className= "font-weight-bold">Total Price= {total}</li>
                 </ul>
                 </Modal.Body>
