@@ -3,12 +3,21 @@
     background-repeat: no-repeat;
     background-size:cover;
     position: relative;
-    background-image: url("../../images/camping4.jpg");
+    background-image: url("../../images/camping3.jpg");
     height: 5%;
 }
 
+.container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .trip-information{
-    background: #edecec url("../../images/camp.jpg") no-repeat scroll right top / 50% 100%;
+    background: #edecec url("../../images/camp-inner.jpeg") no-repeat  ;
+    background-size: cover;
+    background-position: center;
     padding-bottom: 96px;
     padding-top: 100px;
     position: relative;
@@ -21,9 +30,13 @@
     position: relative;
 }
 
-.container{
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+.trip-dates{
+    background: rgba(0, 0, 0, 0) url("../../images/camping2.jpg") repeat scroll center top / cover;
 }
+
+.section-padding{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+
