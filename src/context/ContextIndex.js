@@ -10,6 +10,7 @@ const ContextIndex = (props) => {
     const [token, setToken] = useState(window.localStorage.token)
     // const [tourPackages, setTourPackages] = useState([])
     const [cartCount, setCartCount] = useState([])
+    
 
     // =======Register=============//
     const onRegisterClicked = () => {
@@ -50,7 +51,6 @@ const ContextIndex = (props) => {
            const newCart= await getCartByUid(token)
            const quantity = [newCart.map(a=>a.cartList.map(b=> { return b.quantity}))]
            let count =0
-        console.log(quantity[0][0])
         const total= quantity[0][0].map(a=> count= count+ a )
         setCartCount(count)
         console.log(`cart Count is ${count}`)
@@ -69,7 +69,7 @@ const ContextIndex = (props) => {
         errors,
         token,
         setToken,
-        cartCount
+        cartCount,
         }}>
             {props.children}
             </firebaseAuth.Provider>
