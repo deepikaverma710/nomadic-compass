@@ -112,7 +112,7 @@ export async function getAllActivities() {
           }
       })
       console.log(result.data.packages)
-      const newResult = result.data.packages[0]
+      const newResult = result.data.packages
       console.log(newResult)
       return newResult
     } catch (error) {

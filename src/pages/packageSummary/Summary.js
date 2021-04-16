@@ -45,7 +45,7 @@ const Summary = () => {
             if (token != null) {
               (async () => {
                 const res =  await getPackages(token, dateid)
-                setTourPackage(res)
+                setTourPackage(res[0])
               })()
            
           }else{}}, []);
