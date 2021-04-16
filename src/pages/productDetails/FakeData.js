@@ -11,9 +11,9 @@
         "activityLevel": "Moderate",
         "duration": 10,
         "budget": 40000,
-        "Meals": "All Meals",
-        "Transport": "Airport Pick and Drop",
-        "Accomodation": "Twin Sharing in a lodge for 10 days",
+        "meals": "All Meals",
+        "transport": "Airport Pick and Drop",
+        "accommodation": "Twin Sharing in a lodge for 10 days",
         "tripStatus": "Active"
     },
 
@@ -29,9 +29,9 @@
         "activityLevel": "Difficult",
         "duration": 7,
         "budget": 45000,
-        "Meals": "All Meals",
-        "Transport": "Airport Pick and Drop",
-        "Accomodation": "Twin Sharing in a lodge for 7 days",
+        "meals": "All Meals",
+        "transport": "Airport Pick and Drop",
+        "accommodation": "Twin Sharing in a lodge for 7 days",
         "tripStatus": "Active"
     },
 
@@ -47,9 +47,9 @@
         "activityLevel": "Difficult",
         "duration": 15,
         "budget": 100000,
-        "Meals": "All Meals",
-        "Transport": "Airport Pick and Drop",
-        "Accomodation": "Twin Sharing in tents",
+        "meals": "All Meals",
+        "transport": "Airport Pick and Drop",
+        "accommodation": "Twin Sharing in tents",
         "tripStatus": "Active"
     },
     {
@@ -64,9 +64,9 @@
         "activityLevel": "Difficult",
         "duration": 6,
         "budget": 1000000,
-        "Meals": "All Meals",
-        "Transport": "Airport Pick and Drop",
-        "Accomodation": "Twin Sharing hotel stay",
+        "meals": "All Meals",
+        "transport": "Airport Pick and Drop",
+        "accommodation": "Twin Sharing hotel stay",
         "tripStatus": "Active"
     },
     {
@@ -81,9 +81,9 @@
         "activityLevel": "Difficult",
         "duration": 12,
         "budget": 100000,
-        "Meals": "All Meals",
-        "Transport": "Airport Pick and Drop",
-        "Accomodation": "Twin Sharing hotel stay and tents",
+        "meals": "All Meals",
+        "transport": "Airport Pick and Drop",
+        "accommodation": "Twin Sharing hotel stay and tents",
         "tripStatus": "Active"
     },
     {
@@ -98,9 +98,9 @@
         "activityLevel": "Moderate",
         "duration": 12,
         "budget": 70000,
-        "Meals": "All Meals",
-        "Transport": "Airport Pick and Drop",
-        "Accomodation": "Twin Sharing hotel stay and tents",
+        "meals": "All Meals",
+        "transport": "Airport Pick and Drop",
+        "accommodation": "Twin Sharing hotel stay and tents",
         "tripStatus": "Active"
     },
     {
@@ -115,9 +115,9 @@
         "activityLevel": "Easy",
         "duration": 7,
         "budget": 30000,
-        "Meals": "All Meals",
-        "Transport": "Airport Pick and Drop & travel by road to start point",
-        "Accomodation": "Twin Sharing hotel stay and tents",
+        "meals": "All Meals",
+        "transport": "Airport Pick and Drop & travel by road to start point",
+        "accommodation": "Twin Sharing hotel stay and tents",
         "tripStatus": "Active"
     },
     {
@@ -132,9 +132,9 @@
         "activityLevel": "Easy",
         "duration": 8,
         "budget": 30000,
-        "Meals": "All Meals",
-        "Transport": "Airport Pick and Drop & travel by road to start point",
-        "Accomodation": "Twin Sharing hotel stay and tents",
+        "meals": "All Meals",
+        "transport": "Airport Pick and Drop & travel by road to start point",
+        "accommodation": "Twin Sharing hotel stay and tents",
         "tripStatus": "Active"
     },
     {
@@ -149,9 +149,9 @@
         "activityLevel": "Easy",
         "duration": 5,
         "budget": 20000,
-        "Meals": "All Meals",
-        "Transport": "Airport Pick and Drop & travel by road to start point",
-        "Accomodation": "Twin Sharing in tents",
+        "meals": "All Meals",
+        "transport": "Airport Pick and Drop & travel by road to start point",
+        "accommodation": "Twin Sharing in tents",
         "tripStatus": "Active"
     },
     {
@@ -166,9 +166,9 @@
         "activityLevel": "Easy",
         "duration": 5,
         "budget": 25000,
-        "Meals": "All Meals",
-        "Transport": "Airport Pick and Drop & travel by road to start point",
-        "Accomodation": "Twin Sharing in tents",
+        "meals": "All Meals",
+        "transport": "Airport Pick and Drop & travel by road to start point",
+        "accommodation": "Twin Sharing in tents",
         "tripStatus": "Active"
     },
     {
@@ -183,9 +183,9 @@
         "activityLevel": "Easy",
         "duration": 5,
         "budget": 10000,
-        "Meals": "All Meals",
-        "Transport": "Airport Pick and Drop & travel by road to start point",
-        "Accomodation": "Twin Sharing in tents",
+        "meals": "All Meals",
+        "transport": "Airport Pick and Drop & travel by road to start point",
+        "accommodation": "Twin Sharing in tents",
         "tripStatus": "Active"
     },
     {
@@ -200,9 +200,9 @@
         "activityLevel": "Easy",
         "duration": 5,
         "budget": 10000,
-        "Meals": "All Meals",
-        "Transport": "Airport Pick and Drop & travel by road to start point",
-        "Accomodation": "Twin Sharing in tents",
+        "meals": "All Meals",
+        "transport": "Airport Pick and Drop & travel by road to start point",
+        "accommodation": "Twin Sharing in tents",
         "tripStatus": "Active"
     },
     {
@@ -217,9 +217,9 @@
         "activityLevel": "Easy",
         "duration": 7,
         "budget": 30000,
-        "Meals": "All Meals",
-        "Transport": "Airport Pick and Drop & travel by road to start point",
-        "Accomodation": "Twin Sharing in hotel and tents",
+        "meals": "All Meals",
+        "transport": "Airport Pick and Drop & travel by road to start point",
+        "accommodation": "Twin Sharing in hotel and tents",
         "tripStatus": "Active"
     },
     {
@@ -234,9 +234,9 @@
         "activityLevel": "Easy",
         "duration": 10,
         "budget": 60000,
-        "Meals": "All Meals",
-        "Transport": "Airport Pick and Drop & travel by road to start point",
-        "Accomodation": "Twin Sharing in hotel, lodges and tents",
+        "meals": "All Meals",
+        "transport": "Airport Pick and Drop & travel by road to start point",
+        "accommodation": "Twin Sharing in hotel, lodges and tents",
         "tripStatus": "Active"
     },
     {
@@ -251,9 +251,9 @@
         "activityLevel": "Easy",
         "duration": 4,
         "budget": 50000,
-        "Meals": "All Meals",
-        "Transport": "Airport Pick and Drop & travel by road to start point",
-        "Accomodation": "Twin Sharing in hotel and lodges.",
+        "meals": "All Meals",
+        "transport": "Airport Pick and Drop & travel by road to start point",
+        "accommodation": "Twin Sharing in hotel and lodges.",
         "tripStatus": "Active"
     },
     {
@@ -267,9 +267,9 @@
         "activityLevel": "Easy",
         "duration": 20,
         "budget": 100000,
-        "Meals": "All Meals",
-        "Transport": "Airport Pick and Drop & travel by road to start point",
-        "Accomodation": "Twin Sharing in hotel and lodges.",
+        "meals": "All Meals",
+        "transport": "Airport Pick and Drop & travel by road to start point",
+        "accommodation": "Twin Sharing in hotel and lodges.",
         "tripStatus": "Active"
     },
 ]

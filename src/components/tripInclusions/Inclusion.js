@@ -10,11 +10,12 @@ import { CgPlayStopR }  from 'react-icons/cg';
 
 
 const Inclusion = ({details}) => {
+    console.log(details)
 
 return (
     <div>
         <div class="col-md-12">
-        <h2><b>InterContinental Presidente Cancun Resort</b></h2>
+        <h2><b>{details.packageName}</b></h2>
         <div className="trip-detail-wrap">
         <div className="trip-info-left-text">
                 <div className="section-title ">
@@ -57,12 +58,7 @@ return (
                 <div class="title-border">
                         <h3><b>Trip <span>Inclusions</span></b></h3>
                         <p className="inc-text-i">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dolor turpis, pulvinar varius dui<br/> id, convallis iaculis eros. Praesent porta lacinia elementum.</p>
-                        <div className="">
-                        <p className="text-center">{details.meals}</p>
-                        <p className="text-center">{details.accommodation}</p>
-                        <p className="text-center">{details.transport}</p>
-
-                        </div>
+                        
                         
                 </div>
             </div>

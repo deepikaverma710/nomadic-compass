@@ -9,6 +9,7 @@ const Summary = () => {
     let history = useHistory();
     const { token} = useContext(firebaseAuth)
     const {  dateid, selectedActivity, selectedDestination } = useParams()
+    const [ tourPackage, setTourPackage ] = useState([])
 
     const addToCart = async(e)=>{
         e.preventDefault()
@@ -16,34 +17,35 @@ const Summary = () => {
         setTimeout(() => { history.push("/cart"); ; }, 1000);
     }
 
-    const tourPackage = {
-        "_id": "60760e8143090445b5f0811f",
-        "packageName": "Temple Tiger",
-        "packageDescription": "A flurry of construction is underway on land just outside Thailand’s infamous Tiger Temple, a monastery formally known as Wat Pa Luangta Bua Yannasampanno that doubled as a popular tiger tourism venue until last year",
-        "packageHighlights": "Highlights",
-        "startLocation": "Thailand",
-        "finishLocation": "Mayanmar",
-        "groupSize": 5,
-        "activityLevel": "Easy",
-        "duration": "5",
-        "budget": 10000,
-        "meals": "Breakfast, Lunch",
-        "transport": "Bus",
-        "accommodation": "Hotel, Camps", 
-        "dates":
-            {
-                "numberOfPersonJoined": 4,
-                "_id": "60760e8143090445b5f08120",
-                "departureDate": "2021-04-13T21:34:57.104Z",
-                "tripStatus": "Active"
-            }
-        }
+    // const tourPackage = {
+    //     "_id": "60760e8143090445b5f0811f",
+    //     "packageName": "Temple Tiger",
+    //     "packageDescription": "A flurry of construction is underway on land just outside Thailand’s infamous Tiger Temple, a monastery formally known as Wat Pa Luangta Bua Yannasampanno that doubled as a popular tiger tourism venue until last year",
+    //     "packageHighlights": "Highlights",
+    //     "startLocation": "Thailand",
+    //     "finishLocation": "Mayanmar",
+    //     "groupSize": 5,
+    //     "activityLevel": "Easy",
+    //     "duration": "5",
+    //     "budget": 10000,
+    //     "meals": "Breakfast, Lunch",
+    //     "transport": "Bus",
+    //     "accommodation": "Hotel, Camps", 
+    //     "dates":
+    //         {
+    //             "numberOfPersonJoined": 4,
+    //             "_id": "60760e8143090445b5f08120",
+    //             "departureDate": "2021-04-13T21:34:57.104Z",
+    //             "tripStatus": "Active"
+    //         }
+    //     }
 
 
         useEffect(() => {
             if (token != null) {
               (async () => {
-                await getPackages(token, dateid)
+                const res =  await getPackages(token, dateid)
+                setTourPackage(res)
               })()
            
           }else{}}, []);

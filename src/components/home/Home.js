@@ -92,21 +92,24 @@ const Home = () => {
         type="activity"
         data={activities}
         handleChange={handleActivityChange}
+        selected = {true}
       />
-      {selectedActivity && (
+      {/* {selectedActivity && ( */}
         <Search
           type="destination"
           data={destinations}
           handleChange={handleDestinationChange}
+          selected = {selectedActivity}
         />
-      )}
-      {selectedDestination && (
+      {/* )} */}
+      {/* {selectedDestination && ( */}
         <Search
           type="package"
           data={packages}
           handleChange={handlePackageChange}
+          selected = {selectedDestination}
         />
-      )}
+      {/* )} */}
       <Link
       className="search-btn"
         to={{

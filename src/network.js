@@ -112,7 +112,8 @@ export async function getAllActivities() {
           }
       })
       console.log(result.data.packages)
-      const newResult = result.data.packages
+      const newResult = result.data.packages[0]
+      console.log(newResult)
       return newResult
     } catch (error) {
       console.log(error)

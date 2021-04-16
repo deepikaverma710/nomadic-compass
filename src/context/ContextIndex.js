@@ -50,7 +50,7 @@ const ContextIndex = (props) => {
             (async () => {
            const newCart= await getCartByUid(token)
            const quantity = [newCart.map(a=>a.cartList.map(b=> { return b.quantity}))]
-           let count =0
+           let count = -1
         const total= quantity[0][0].map(a=> count= count+ a )
         setCartCount(count)
         console.log(`cart Count is ${count}`)
