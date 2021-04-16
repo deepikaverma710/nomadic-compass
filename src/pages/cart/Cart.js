@@ -94,12 +94,12 @@ const Cart = () => {
 
   return (
     <div>
-      <div className="hero-image">
+      <div >
         <Navigation />
       </div>
+<div className="hero-image ">
 
-
-      <div className="table-responsive-lg">
+      <div className="table-responsive-lg bg-white">
         <table className="table">
 
           <thead>
@@ -140,7 +140,12 @@ const Cart = () => {
                     <td>{a[0].budget}</td>
                     <td>{quantity[i] * a[0].budget}</td>
                     <td className="d-none">{total = total + (quantity[i] * a[0].budget)}</td>
-                    <td className="text-right"><Link to="/details"><button>See details</button></Link>
+                    <td className="text-right">
+                      <Link
+                      to={{
+                        pathname:  `/${activity[i]}/${destitaion[i]}/${a[0].packageName}`,
+                        }}>
+                        <button>See details</button></Link>
                     <button
                     onClick={(e)=>{e.preventDefault(); setReset(!reset); deleteCartListItem(cartId[i])}}>
                       Remove</button></td>
@@ -150,10 +155,11 @@ const Cart = () => {
             })}
           </tbody>
         </table>
+        <div className=" p-2 font-weight-bold text-center border-top">Total: ${total}</div>
       </div>
-      <div className="border p-5 text-center font-weight-bold">
-        <div className=" pb-5">Total: ${total}</div>
-        <Button variant="secondary" onClick={handleShow}>
+      <div className="p-2 text-center">
+       
+        <Button variant="primary" onClick={handleShow}>
           Checkout
       </Button>
       </div>
@@ -167,13 +173,13 @@ const Cart = () => {
             {tourPackages.map(a => {
               if (!!a) {
                 return (
-                  <li key={a[0]._id}>
+                  <li key={a[0]._id} className="text-center">
                     {a[0].packageName}
                   </li>
                 )
               }
             })}
-            <li className="font-weight-bold">Total Price= {total}</li>
+            <li className="font-weight-bold text-center">Total Price= {total}</li>
           </ul>
         </Modal.Body>
         <Modal.Footer>
@@ -182,7 +188,7 @@ const Cart = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-
+      </div>
     </div>
   );
 
