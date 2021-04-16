@@ -40,7 +40,7 @@ export async function getAllActivities() {
             "Access-Control-Allow-Origin": "*"
           }
       })
-      const newResult = result.data.packages[0].destinations[0].tourPackages
+      const newResult = result.data.destination[0].tourPackages
       console.log(newResult)
       return newResult
     } catch (error) {

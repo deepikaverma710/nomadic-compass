@@ -17,7 +17,6 @@ const Details = () => {
                     <Overview/>
                 </div>
             </div>
-            
         </div>
     </div>
   );
