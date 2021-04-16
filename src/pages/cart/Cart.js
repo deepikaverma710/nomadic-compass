@@ -4,7 +4,7 @@ import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Modal, Button } from 'react-bootstrap';
 import { firebaseAuth } from '../../context/ContextIndex';
-import { getPackages, getCartByUid } from '../../network';
+import { getPackages, getCartByUid, incQuantity, decQuantity } from '../../network';
 
 
 
@@ -13,33 +13,40 @@ const Cart = () => {
 
   const { token} = useContext(firebaseAuth)
   let total = 0
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const [show, setShow] = useState(false);
   const [tourPackages, setTourPackages] = useState([])
   const [quantity, setQuantity] = useState([])
   const [activity, setActivity] = useState([])
   const [destitaion, setDestination] = useState([])
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [cartId, setcartId] = useState([])
+  const [reset, setReset] = useState(true)
 
-  const [qty, setQty] = useState(1)
-  const [totalPrice, setTotalPrice] = useState()
+
+  // const [qty, setQty] = useState(1)
+  // const [totalPrice, setTotalPrice] = useState()
   const [minusButton, setMinusButton] = useState(false)
   const [plusButton, setPlusButton] = useState(false)
-  const qtyAddtion = () => {
-    setMinusButton(false)
-    const newQty = qty + 1;
-    setQty(newQty);
-  }
+  
+  // const qtyAddtion = (i) => {
+  //   // setMinusButton(false)
+  //   // const newQty = qty + 1;
+  //   // setQty(newQty);
+  //   console.log(i)
+  // }
 
-  const qtySubtraction = () => {
-    if (qty < 2) {
-      setMinusButton(true)
-    }
-    else {
-      const newQty = qty - 1;
-      setQty(newQty);
-    }
-  }
+  // const qtySubtraction = () => {
+  //   if (qty < 2) {
+  //     setMinusButton(true)
+  //   }
+  //   else {
+  //     const newQty = qty - 1;
+  //     setQty(newQty);
+  //   }
+  // }
 
   // const getpkgs= async()=>{
   //     const pkgs=  await getPackages("8K3y9NSUnVZGqWeeBX8uA8ENYxu2", "6077ff89a172bb2908d9e6a7");
@@ -66,9 +73,13 @@ const Cart = () => {
         const quantity = [newCart.map(a=>a.cartList.map(b=> { return b.quantity}))]
         const activity = [newCart.map(a=>a.cartList.map(b=> { return b.activityName}))]
         const destination = [newCart.map(a=>a.cartList.map(b=> { return b.destinationName}))]
+        const cartid = [newCart.map(a=>a.cartList.map(b=> { return b._id}))]
+        
         setTimeout(() => { setQuantity(quantity[0][0]) }, 1000);
         setTimeout(() => { setActivity(activity[0][0]) }, 1000);
-        setTimeout(() => { setDestination(destination[0][0]) }, 1000);           
+        setTimeout(() => { setDestination(destination[0][0]) }, 1000); 
+        setTimeout(() => { setDestination(destination[0][0]) }, 1000);  
+        setTimeout(() => { setcartId(cartid[0][0]) }, 1000);           
 
         const newpackages = await Promise.all(dateId[0][0].map(async (a) => {
           if (!!a) {
@@ -79,7 +90,7 @@ const Cart = () => {
         setTimeout(() => { setTourPackages(newpackages) }, 1000);
       })()
     }
-  }, []);
+  }, [reset]);
 
   return (
     <div>
@@ -115,20 +126,20 @@ const Cart = () => {
                       <button
                         disabled={minusButton}
                         className="pb-1 border-0 bg-white"
-                        onClick={qtySubtraction}>
+                        onClick={async(e)=>{e.preventDefault() ;setReset(!reset); await decQuantity(cartId[i])}}>
                         <FaMinusCircle />
                       </button >
                       {quantity[i]}
                       <button
                         disabled={plusButton}
                         className="border-0 bg-white"
-                        onClick={qtyAddtion}>
+                        onClick={(e)=>{e.preventDefault(); setReset(!reset); incQuantity(cartId[i])}}>
                         <FaPlusCircle />
-                      </button>
+                      </button> 
                     </td>
                     <td>{a[0].budget}</td>
-                    <td>{qty * a[0].budget}</td>
-                    <td className="d-none">{total = total + a[0].budget}</td>
+                    <td>{quantity[i] * a[0].budget}</td>
+                    <td className="d-none">{total = total + (quantity[i] * a[0].budget)}</td>
                     <td className="text-right"><Link to="/details"><button>See details</button></Link><button>Remove</button></td>
                   </tr>
                 )

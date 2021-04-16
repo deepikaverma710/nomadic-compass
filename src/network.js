@@ -74,3 +74,31 @@ export async function getAllActivities() {
       alert(error.message)
     }
   }
+
+  export async function incQuantity(cartListId) {
+    try {
+      const result = await axios.post(`${apiUrl}api/user/inc/${cartListId}`,{
+          headers:{
+            "Access-Control-Allow-Origin": "*"
+          }
+      })
+      return result
+    } catch (error) {
+      console.log(error)
+      alert(error.message)
+    }
+  }
+
+  export async function decQuantity(cartListId) {
+    try {
+      const result = await axios.post(`${apiUrl}api/user/dec/${cartListId}`,{
+          headers:{
+            "Access-Control-Allow-Origin": "*"
+          }
+      })
+      return result
+    } catch (error) {
+      console.log(error)
+      alert(error.message)
+    }
+  }
