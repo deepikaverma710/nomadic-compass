@@ -25,7 +25,6 @@ export async function getAllActivities() {
           }
       })
       const newResult = result.data.destinations[0].destinations
-      console.log(newResult)
       return newResult
     } catch (error) {
       console.log(error)
@@ -41,14 +40,28 @@ export async function getAllActivities() {
           }
       })
       const newResult = result.data.destination[0].tourPackages
-      console.log(newResult)
       return newResult
     } catch (error) {
       console.log(error)
       alert(error.message)
     }
   }
+  
 
+  export async function getPackageDates(activity,destination,packageName) {
+    try {
+      const result = await axios.get(`${apiUrl}api/activities/${activity}/${destination}/${packageName}`,{
+          headers:{
+            "Access-Control-Allow-Origin": "*"
+          }
+      })
+      const newResult = result.data.selectedPackage[0]
+      return newResult
+    } catch (error) {
+      console.log(error)
+      alert(error.message)
+    }
+  }
   
   export async function addNewActivity(){
     try {

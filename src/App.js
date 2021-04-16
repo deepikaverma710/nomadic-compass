@@ -25,7 +25,7 @@ return (
   <PrivateRoute exact path='/' component = {HomePage} token={token} />
   <Route exact path='/register' component={Register} />
   <Route exact path='/login' component={Login} />
-  <Route exact path='/details' component={Details} />
+  <Route exact path='/:selectedActivity/:selectedDestination/:selectedPackage' component={Details} />
   </Switch>
   );
 }

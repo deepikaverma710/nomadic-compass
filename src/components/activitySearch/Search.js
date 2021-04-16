@@ -3,8 +3,6 @@ import "../activitySearch/Search.css";
 
 const Search = ({type, data, handleChange}) => {
 
-    console.log(data)
-
     const categories = data.map(item => {
         if(type === "activity")
         return (<option key={item.activityName} value={item.activityName}> {item.activityName} </option>)

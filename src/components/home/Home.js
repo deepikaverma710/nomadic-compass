@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+
 import "../home/Home.css";
 import Search from "../../components/activitySearch/Search";
 import {
@@ -9,12 +11,14 @@ import {
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  let history = useHistory();
   const [activities, setActivities] = useState([]);
   const [destinations, setDestinations] = useState([]);
   const [packages, setPackages] = useState([]);
   const [selectedActivity, setSelectedActivity] = useState("");
   const [selectedDestination, setSelectedDestination] = useState("");
   const [selectedPackage, setSelectedPackage] = useState("");
+  const [selectedPackageDetails, setSelectedPackageDetails] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -38,7 +42,10 @@ const Home = () => {
 
   const handlePackageChange = async (e) => {
     setSelectedPackage(e.target.value);
-    console.log("Package Selected");
+    const selected = packages.filter(
+      (item) => item.packageName === e.target.value
+    );
+    setSelectedPackageDetails(selected);
   };
 
   const loadDestinations = async (activity) => {
@@ -51,44 +58,59 @@ const Home = () => {
     setPackages(packages);
   };
 
-  const seeDetails = () => {
-    <Link to="/details" />;
-  };
 
-  console.log(selectedActivity)
-  console.log(selectedDestination)
-  console.log(selectedPackage)
+
+  // const seeDetails = () => {
+  //   history.push({
+  //     pathname: "/details",
+  //       packageData: {
+  //         selectedActivity: selectedActivity,
+  //         selectedDestination: selectedDestination,
+  //         selectedPackage: selectedPackage,
+  //         packages: packages,
+  //         selectedPackageDetail: selectedPackageDetails,
+  //       },
+  //   });
+  // };
+
+  console.log(selectedActivity);
+  console.log(selectedDestination);
+  console.log(selectedPackage);
+  console.log(packages);
+  console.log(selectedPackageDetails);
 
   return (
     <div className="hero-image">
-      <form action="#" id="banner-searchbox" className="cat-selection">
+      <Search
+        type="activity"
+        data={activities}
+        handleChange={handleActivityChange}
+      />
+      {selectedActivity && (
         <Search
-          type="activity"
-          data={activities}
-          handleChange={handleActivityChange}
+          type="destination"
+          data={destinations}
+          handleChange={handleDestinationChange}
         />
-        {selectedActivity && (
-          <Search
-            type="destination"
-            data={destinations}
-            handleChange={handleDestinationChange}
-          />
-        )}
-        {selectedDestination && (
-          <Search
-            type="package"
-            data={packages}
-            handleChange={handlePackageChange}
-          />
-        )}
-        <button type="submit" id="btn-search-category" onClick={seeDetails}>
-          See Details
-        </button>
-      </form>
+      )}
+      {selectedDestination && (
+        <Search
+          type="package"
+          data={packages}
+          handleChange={handlePackageChange}
+        />
+      )}
+      <Link
+        to={{
+          pathname:  `/${selectedActivity}/${selectedDestination}/${selectedPackage}`,
+        }}
+      >
+        See Package Details
+      </Link>
+
+      {/* <button onClick={seeDetails}>See</button> */}
     </div>
   );
 };
 
 export default Home;
-
-
