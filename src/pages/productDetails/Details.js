@@ -22,7 +22,7 @@ useEffect(() => {
   });
 }, []);
 
-console.log(dates.dates)
+console.log(dates)
 
   return (
     <div className="hero-image">
@@ -31,17 +31,17 @@ console.log(dates.dates)
         <div>
             <div className="trip-information">
                 <div className="container">
-                    <Overview/>
+                    <Overview details={dates} />
                 </div>
             </div>
             <div className="trip-inclusions">
                 <div className="container">
-                    <Inclusion/>
+                    <Inclusion details={dates} />
                 </div>
             </div>
             <div className="trip-dates section-padding">
                 <div className="container">
-                    <Dates/>
+                    <Dates details={dates.dates}/>
                 </div>
             </div>
           </div>
