@@ -28,12 +28,12 @@ const Summary = () => {
         }
 
   return (
-    <div className="summary-image">
+    <div>
         <Navigation></Navigation>
         <h1 className= "summary-heading text-center">Package Summary</h1>
-    <div className="trip-overview row">
+    <div className="summary-overview row">
             <div class="col-md-6">
-            <div className="trip-info-left-text">
+            <div className="summary-info-left-text">
                 <div className="section-title text-center">
                     <div className="title-border">
                         <h1>{tourPackage.packageName}</h1>

@@ -5,8 +5,8 @@
     margin-left: auto;
 }
 
-.trip-overview{
-    margin-top: 50px;
+.summary-overview{
+    margin-top: 30px;
     background: #edecec url("../../images/camping5.jpg") no-repeat scroll right top / 50% 100%;
 }
 
@@ -16,12 +16,12 @@
 }
 
 .summary-heading{
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
-.trip-info-left-text{
-    margin-top: 85px;
-    margin-bottom: 85px;
+.summary-info-left-text{
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .cart-button{

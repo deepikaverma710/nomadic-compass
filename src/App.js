@@ -6,6 +6,7 @@ import Home from './pages/home/Home'
 import Login from './components/auth/Login'
 import Details from './pages/productDetails/Details';
 import Summary from './pages/packageSummary/Summary';
+import Admin from './pages/admin/Admin';
 
 
 function PrivateRoute({component: Component, token, ...rest}) {
@@ -29,6 +30,7 @@ return (
   <Route exact path='/login' component={Login} />
   <Route exact path='/details' component={Details} />
   <Route exact path='/summary' component={Summary} />
+  <Route exact path='/admin' component={Admin} />
   </Switch>
   );
 }
