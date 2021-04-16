@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from '../../components/navigation/Navigation';
 import "./Summary.css";
+import { useParams } from 'react-router-dom';
 
 const Summary = () => {
 
