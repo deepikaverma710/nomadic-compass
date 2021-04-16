@@ -1,0 +1,16 @@
+.table-responsive{
+    min-height: .01%;
+    overflow-x: auto;
+}
+
+.dates-table{
+    margin-right:auto;
+    margin-left: auto;
+
+}
+
+.dates-background{
+    background-color: black;
+    opacity: 0.6;
+    color: #ffffff;
+}
