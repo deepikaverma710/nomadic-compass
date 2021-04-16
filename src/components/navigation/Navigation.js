@@ -23,9 +23,8 @@ const Navigation = (props) => {
         </div>
         <div className= "navigation"> 
           <Navbar bg="dark" variant="dark">
-              <Navbar.Brand href="#home">Nomadic Compass</Navbar.Brand>
+              <Navbar.Brand href="/">Nomadic Compass</Navbar.Brand>
                 <Nav className="menu">
-                  <Nav.Link href="#home">Home</Nav.Link>
                   <Nav.Link href="#about-us">About Us</Nav.Link>
                   <Nav.Link href="#responsible-tourism">Responsible Tourism</Nav.Link>
                 </Nav>
