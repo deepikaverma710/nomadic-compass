@@ -161,3 +161,17 @@ export async function getAllActivities() {
       alert(error.message)
     }
   }
+
+    
+  export async function insertCartItem(uid, dateId, activityName, destinationName){
+    try {
+      const result = await axios.post(`${apiUrl}api/user/${uid}`, {
+        dateId: dateId,
+        activityName: activityName,
+        destinationName: destinationName
+      })
+      return result.data
+    } catch (error) {
+      console.log(error)
+    }
+  } 
