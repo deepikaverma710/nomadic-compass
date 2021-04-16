@@ -59,7 +59,7 @@ const Summary = () => {
                 </div>
         </div>        
     </div>
-        <div className="highlights text-center">
+        <div className="cart-button text-center">
             <button  type="submit">Add to Cart  </button>
         </div>     
     </div>

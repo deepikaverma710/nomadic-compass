@@ -11,7 +11,7 @@
 }
 
 .highlights{
-    margin-top: 50px;
+    margin-top: 120px;
     align-items: center;
 }
 
@@ -20,5 +20,11 @@
 }
 
 .trip-info-left-text{
-    margin-top: 20px;
+    margin-top: 85px;
+    margin-bottom: 85px;
+}
+
+.cart-button{
+    margin-top: 40px;
+    align-items: center;
 }
