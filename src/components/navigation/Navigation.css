@@ -40,4 +40,11 @@ body, html {
     font-weight: 600;
     color: #fff!important;
     padding: 0 18px!important;
+    z-index: 1;
+    
+}
+
+.container{
+    margin-left: auto;
+    margin-top: auto;
 }

@@ -20,6 +20,7 @@ const Navigation = (props) => {
                   <Nav.Link href="#responsible-tourism">Responsible Tourism</Nav.Link>
                 </Nav>
                 <div className="header-text row">
+
                     <FaShoppingCart/>
                     <p>2 /</p>
                     <BsFillLockFill/>
