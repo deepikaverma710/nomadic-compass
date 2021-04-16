@@ -1,7 +1,7 @@
 import React from "react";
 import "../activitySearch/Search.css";
 
-const Search = ({type, data, handleChange}) => {
+const Search = ({type, data, handleChange, selected}) => {
 
     const categories = data.map(item => {
         if(type === "activity")
@@ -15,7 +15,7 @@ const Search = ({type, data, handleChange}) => {
 
   return (
       <div className="activity-cat">
-        <select name="category"  className="search-adventure" onChange={handleChange} placeholder={`Select ${type}`}>
+        <select name="category"  className="search-adventure" onChange={handleChange} placeholder={`Select ${type}`} disabled={!selected}>
           <option> {`Select ${type}`} </option>
           {categories}
         </select>
