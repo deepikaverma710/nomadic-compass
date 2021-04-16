@@ -58,3 +58,19 @@ export async function getAllActivities() {
       alert(error.message)
     }
   }
+
+  export async function getPackages(uid, dateid) {
+    try {
+      const result = await axios.get(`${apiUrl}api/user/${uid}/${dateid}`,{
+          headers:{
+            "Access-Control-Allow-Origin": "*"
+          }
+      })
+      console.log(result.data.packages)
+      const newResult = result.data.packages
+      return newResult
+    } catch (error) {
+      console.log(error)
+      alert(error.message)
+    }
+  }

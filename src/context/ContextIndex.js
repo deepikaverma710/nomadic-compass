@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {authMethods} from '../firebase/authMethods'
-import { getCartByUid } from '../network';
+import { getCartByUid, getPackages} from '../network';
 
 export const firebaseAuth = React.createContext()
 
@@ -8,7 +8,8 @@ const ContextIndex = (props) => {
     const [inputs, setInputs] = useState({email: '', password: ''})
     const [errors, setErrors] = useState([])
     const [token, setToken] = useState(window.localStorage.token)
-    const [cart, setCart] = useState([])
+    // const [tourPackages, setTourPackages] = useState([])
+    const [dates, setDates] = useState([])
 
     // =======Register=============//
     const onRegisterClicked = () => {
@@ -25,12 +26,33 @@ const ContextIndex = (props) => {
         authMethods.logout(setErrors, setToken)
       }
 
-      useEffect(() => {
+    //   useEffect(() => {
+    //     if(token != null ){
+    //         (async () => {
+    //        const newCart= await getCartByUid(token)
+    //     //    setCart(newCart)
+    //        const dateId = [newCart.map(a=>a.cartList.map(b=> { return b.dateId}))]
+           
+    //     //    newCart.map(a=>a.cartList.map(b=>setCartQty(cartQty+b.quantity)))
+    //        console.log(`Cart ${newCart}`)
+
+    //        const newpackages=dateId[0][0].map(a=>{if (!!a){
+    //            return  getPackages(token, a);
+    //        } else{}})
+    //        setTourPackages(newpackages)
+    //     })()
+    //       }
+    // }, []);
+
+    useEffect(() => {
         if(token != null ){
             (async () => {
            const newCart= await getCartByUid(token)
-           setCart(newCart)
-           console.log(newCart)
+        //    setCart(newCart)
+           const dateId = [newCart.map(a=>a.cartList.map(b=> { return b.dateId}))]
+           
+        //    newCart.map(a=>a.cartList.map(b=>setCartQty(cartQty+b.quantity)))
+        setDates(dateId[0][0])
         })()
           }
     }, []);
@@ -46,7 +68,8 @@ const ContextIndex = (props) => {
         errors,
         token,
         setToken,
-        cart
+        // tourPackages,
+        dates
         }}>
             {props.children}
             </firebaseAuth.Provider>
