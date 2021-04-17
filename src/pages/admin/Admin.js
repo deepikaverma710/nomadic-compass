@@ -77,7 +77,7 @@ const Admin = () => {
                         <Form.Control placeholder="yy/mm/dd" />
                         </Col>
                         <Col xs={6}>
-                        <Form.Label>Maximum Number of people in a group</Form.Label>
+                        <Form.Label>Maximum group size</Form.Label>
                         <Form.Control placeholder="Number" />
                         </Col>
                     </Form.Row>
@@ -96,11 +96,7 @@ const Admin = () => {
                         </Col>
                     </Form.Row>
                     <Form.Row>
-                        <Col xs={3}>
-                        <Form.Label>Group Size</Form.Label>
-                        <Form.Control placeholder="City/Town/Village" />
-                        </Col>
-                        <Col xs={3}>
+                        <Col xs={4}>
                         <Form.Label>Activity Level</Form.Label>
                         <Form.Control as="select">
                         <option>Easy</option>
@@ -108,11 +104,11 @@ const Admin = () => {
                         <option>Difficult</option>
                         </Form.Control>
                         </Col>
-                        <Col xs={3}>
+                        <Col xs={4}>
                         <Form.Label>Duration of the package</Form.Label>
                         <Form.Control placeholder="Days" />
                         </Col>
-                        <Col xs={3}>
+                        <Col xs={4}>
                         <Form.Label>Budget</Form.Label>
                         <Form.Control placeholder="Cost of package in $" />
                         </Col>
