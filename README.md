@@ -37,4 +37,8 @@ Users are able to:
 
 Clone this repo and run `npm install`.  
 Replace API keys within the .envSAMPLE. You will need to register for Firebase, Heroku and MongoAtlas accounts.
-
+Run `npm install --save bootstrap` for installing bootstrap
+Run `npm install react-icons --save` for installing react icons
+Run `npm install react-router-dom` for installing react routers
+Run `npm install axios` for installing axios
+Run `npm i cors-anywhere` for installing Node.js proxy
