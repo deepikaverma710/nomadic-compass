@@ -31,6 +31,7 @@ Users are able to:
 - Consume a Google API and create maps for the tour packages
 - Create user and service provider profile. 
 
+### Deployed application can be seen here(https://nervous-montalcini-fcf9b8.netlify.app/)
 
 ## Installation Instructions
 
