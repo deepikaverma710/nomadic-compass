@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-
 import "../home/Home.css";
 import Search from "../../components/activitySearch/Search";
 import {
@@ -24,7 +23,6 @@ const Home = () => {
   useEffect(() => {
     (async () => {
       const act = await getAllActivities();
-      // act.map((a) => console.log(a.activityName));
       setActivities(act);
     })().catch((err) => {
       console.error(err);
@@ -60,20 +58,6 @@ const Home = () => {
   };
 
 
-
-  // const seeDetails = () => {
-  //   history.push({
-  //     pathname: "/details",
-  //       packageData: {
-  //         selectedActivity: selectedActivity,
-  //         selectedDestination: selectedDestination,
-  //         selectedPackage: selectedPackage,
-  //         packages: packages,
-  //         selectedPackageDetail: selectedPackageDetails,
-  //       },
-  //   });
-  // };
-
   console.log(selectedActivity);
   console.log(selectedDestination);
   console.log(selectedPackage);
@@ -83,45 +67,44 @@ const Home = () => {
   return (
     <div className="hero-image">
       <div className="blurb">
-      <h1>Nomadic Compass Travels</h1>
-      <p>The simplest to book travel destinations.</p>
+        <h1>Nomadic Compass Travels</h1>
+        <p>The simplest to book travel destinations.</p>
       </div>
       <div className="hero-image-inner">
-      <div className="search-wrap">
-      <Search
-        type="activity"
-        data={activities}
-        handleChange={handleActivityChange}
-        selected = {true}
-      />
-      {/* {selectedActivity && ( */}
-        <Search
-          type="destination"
-          data={destinations}
-          handleChange={handleDestinationChange}
-          selected = {selectedActivity}
-        />
-      {/* )} */}
-      {/* {selectedDestination && ( */}
-        <Search
-          type="package"
-          data={packages}
-          handleChange={handlePackageChange}
-          selected = {selectedDestination}
-        />
-      {/* )} */}
-      <Link
-      className="search-btn"
-        to={{
-          pathname:  `/${selectedActivity}/${selectedDestination}/${selectedPackage}`,
-        }}
-      >
-        See Details &nbsp;<FaArrowAltCircleRight />
-      </Link>
+        <div className="search-wrap">
+          <Search
+            type="activity"
+            data={activities}
+            handleChange={handleActivityChange}
+            selected={true}
+          />
+          {/* {selectedActivity && ( */}
+          <Search
+            type="destination"
+            data={destinations}
+            handleChange={handleDestinationChange}
+            selected={selectedActivity}
+          />
+          {/* )} */}
+          {/* {selectedDestination && ( */}
+          <Search
+            type="package"
+            data={packages}
+            handleChange={handlePackageChange}
+            selected={selectedDestination}
+          />
+          {/* )} */}
+          <Link
+            className="search-btn"
+            to={{
+              pathname: `/${selectedActivity}/${selectedDestination}/${selectedPackage}`,
+            }}
+          >
+            See Details &nbsp;<FaArrowAltCircleRight />
+          </Link>
 
+        </div>
       </div>
-      </div> 
-      {/* <button onClick={seeDetails}>See</button> */}
     </div>
   );
 };

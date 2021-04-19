@@ -11,7 +11,7 @@ import { getPackages, getCartByUid, incQuantity, decQuantity, deleteCartListItem
 const Cart = () => {
 
 
-  const { token} = useContext(firebaseAuth)
+  const { token, reset, setReset} = useContext(firebaseAuth)
   let total = 0
 
   const handleClose = () => setShow(false);
@@ -23,9 +23,7 @@ const Cart = () => {
   const [activity, setActivity] = useState([])
   const [destitaion, setDestination] = useState([])
   const [cartId, setcartId] = useState([])
-  const [reset, setReset] = useState(true)
-
-
+  
   // const [qty, setQty] = useState(1)
   // const [totalPrice, setTotalPrice] = useState()
   const [minusButton, setMinusButton] = useState(false)
@@ -75,19 +73,17 @@ const Cart = () => {
         const destination = [newCart.map(a=>a.cartList.map(b=> { return b.destinationName}))]
         const cartid = [newCart.map(a=>a.cartList.map(b=> { return b._id}))]
         
-        setTimeout(() => { setQuantity(quantity[0][0]) }, 1000);
-        setTimeout(() => { setActivity(activity[0][0]) }, 1000);
-        setTimeout(() => { setDestination(destination[0][0]) }, 1000); 
-        setTimeout(() => { setDestination(destination[0][0]) }, 1000);  
-        setTimeout(() => { setcartId(cartid[0][0]) }, 1000);           
+        setQuantity(quantity[0][0]);
+        setActivity(activity[0][0]);
+        setDestination(destination[0][0]);
+        setcartId(cartid[0][0])         
 
         const newpackages = await Promise.all(dateId[0][0].map(async (a) => {
           if (!!a) {
             return await getPackages(token, a);
           } else { return null }
         }))
-
-        setTimeout(() => { setTourPackages(newpackages) }, 1000);
+        setTourPackages(newpackages) 
       })()
     }
   }, [reset]);
@@ -195,4 +191,3 @@ const Cart = () => {
 };
 
 export default Cart;
-

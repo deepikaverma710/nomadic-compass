@@ -176,3 +176,15 @@ export async function getAllActivities() {
       console.log(error)
     }
   } 
+
+  export async function insertUser(uid){
+    try {
+      const result = await axios.post(`${apiUrl}api/user`, {
+        uid:uid
+      })
+      console.log()
+    } catch (error) {
+      console.log(error)
+    }
+  } 
+
