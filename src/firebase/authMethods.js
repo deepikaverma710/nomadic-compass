@@ -1,5 +1,6 @@
 import firebaseconfig from './firebaseSDK'
 import firebase from 'firebase'
+import { insertUser } from '../network'
 
 export const authMethods = {
 
@@ -11,7 +12,8 @@ export const authMethods = {
       await localStorage.setItem('token', token) 
       setToken(token)
       console.log(`currentUser ${token}`)
-    })
+      await insertUser(token)
+     })
     .catch(err => {
       setErrors(prev => ([...prev, err.message]))
     })
