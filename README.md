@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Nomadic Compass - a React App for a travel project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Deepika Verma, Kulveer Brar, Mandeep Dhillon
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+Nomadic Compass is a travel app, offering fixed tours. The app is created in React, uses Firebase for authentication, express for server and MongoDb as database.  The app utilizes RESTful API routes to connect to the server. The app is delpoyed using MongoAtlas (database), Heroku (ServerAPI) and Netlify (Client-side)
 
-### `npm start`
+## Prototype
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+We had a web template which we used as inspiration for our UI.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<img src = "/assets/RDG.jpg">
+<img src = "/assets/RDG1.jpg">
+<img src = "/assets/RDG2.jpg">
+<img src = "/assets/RDG3.jpg">
 
-### `npm test`
+#### Current Features: 
+Users are able to: 
+- login/register 
+- search for tours in a pre-defined list of activities, destinations and packages
+- buy a package or multiple packages from the cart.
+- user can delete packages from the cart.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Feautres being built:
+- build a service provider role who can upolad packages.
+- Form to upload the packages.
 
-### `npm run build`
+#### Nice to have features:
+- Create a photogallery bucket by using GridFS from MongoAtlas for all tour packages
+- Consume a Google API and create maps for the tour packages
+- Create user and service provider profile. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Deployed application can be seen here(https://nervous-montalcini-fcf9b8.netlify.app/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation Instructions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Clone this repo and run `npm install`.  
+Replace API keys within the .envSAMPLE. You will need to register for Firebase, Heroku and MongoAtlas accounts.
+Run `npm install --save bootstrap` for installing bootstrap
+Run `npm install react-icons --save` for installing react icons
+Run `npm install react-router-dom` for installing react routers
+Run `npm install axios` for installing axios
+Run `npm i cors-anywhere` for installing Node.js proxy

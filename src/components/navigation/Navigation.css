@@ -41,7 +41,7 @@ body, html {
     color: #fff!important;
     padding: 0 18px!important;
     z-index: 1;
-    
+    height: 50px; 
 }
 
 .container{

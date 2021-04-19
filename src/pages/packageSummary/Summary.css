@@ -5,18 +5,23 @@
     margin-left: auto;
 }
 
-.trip-overview{
-    margin-top: 50px;
+.summary-overview{
+    margin-top: 30px;
     background: #edecec url("../../images/camping5.jpg") no-repeat scroll right top / 50% 100%;
 }
 
 .highlights{
-    margin-top: 50px;
+    margin-top: 120px;
     align-items: center;
 }
 
 .summary-heading{
-    margin-top: 40px;
+    margin-top: 30px;
+}
+
+.summary-info-left-text{
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .trip-info-left-text{
