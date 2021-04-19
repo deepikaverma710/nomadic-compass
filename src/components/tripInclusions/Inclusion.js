@@ -48,7 +48,7 @@ const Inclusion = ({ details }) => {
                     </div>
                     <div className="btn-wrpa-in">
                     <div className="button  btn-block text-center mt-4 mb-5">
-                        <a className="search-btn p-2 text-center">Book this trip</a>
+                        {/* <a  href className="search-btn p-2 text-center">Book this trip</a> */}
                     </div>
                 </div>
                 </div>

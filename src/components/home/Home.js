@@ -94,14 +94,18 @@ const Home = () => {
             selected={selectedDestination}
           />
           {/* )} */}
-          <Link
+          {
+            selectedPackage &&
+            <Link
             className="search-btn"
             to={{
               pathname: `/${selectedActivity}/${selectedDestination}/${selectedPackage}`,
             }}
+            disable
           >
             See Details &nbsp;<FaArrowAltCircleRight />
           </Link>
+          }
 
         </div>
       </div>
