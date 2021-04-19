@@ -10,6 +10,7 @@
 }
 .pac-details{
     font-size: 14px;
+    line-height: 30px;
 }
 .details-info{
     list-style: none;
@@ -19,7 +20,7 @@
     flex-direction: row; */
 }
 .details-info li{
-    padding: 4px 0;
+    padding: 7px 0;
     padding-right: 15px;
 }
 
@@ -30,10 +31,10 @@
     font-size: 13px;
 }
 .trip-detail-wrap{
-    display: flex;
+    
 }
 .trip-detail-wrap>div{
-    width: calc(100%/3);
+    width: 100%;
 }
 .btn-wrpa-in{
     text-align: center;
