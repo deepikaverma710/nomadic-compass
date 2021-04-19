@@ -9,6 +9,7 @@ import Cart from './pages/cart/Cart';
 import HomePage from './pages/homepage/HomePage';
 
 import Summary from './pages/packageSummary/Summary';
+import Admin from './pages/admin/Admin';
 
 
 
