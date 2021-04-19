@@ -11,7 +11,7 @@ import { getPackages, getCartByUid, incQuantity, decQuantity, deleteCartListItem
 const Cart = () => {
 
 
-  const { token} = useContext(firebaseAuth)
+  const { token, reset, setReset} = useContext(firebaseAuth)
   let total = 0
 
   const handleClose = () => setShow(false);
@@ -23,9 +23,7 @@ const Cart = () => {
   const [activity, setActivity] = useState([])
   const [destitaion, setDestination] = useState([])
   const [cartId, setcartId] = useState([])
-  const [reset, setReset] = useState(true)
-
-
+  
   // const [qty, setQty] = useState(1)
   // const [totalPrice, setTotalPrice] = useState()
   const [minusButton, setMinusButton] = useState(false)

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {authMethods} from '../firebase/authMethods'
-import { getCartByUid, getPackages} from '../network';
+import { getCartByUid} from '../network';
 
 export const firebaseAuth = React.createContext()
 
@@ -8,9 +8,8 @@ const ContextIndex = (props) => {
     const [inputs, setInputs] = useState({email: '', password: ''})
     const [errors, setErrors] = useState([])
     const [token, setToken] = useState(window.localStorage.token)
-    // const [tourPackages, setTourPackages] = useState([])
     const [cartCount, setCartCount] = useState([])
-    
+    const [reset, setReset] = useState(true)
 
     // =======Register=============//
     const onRegisterClicked = () => {
@@ -56,7 +55,7 @@ const ContextIndex = (props) => {
         console.log(`cart Count is ${count}`)
         })()
           }
-    }, []);
+    }, [reset]);
 
     return (
     <firebaseAuth.Provider
@@ -70,6 +69,8 @@ const ContextIndex = (props) => {
         token,
         setToken,
         cartCount,
+        reset, 
+        setReset
         }}>
             {props.children}
             </firebaseAuth.Provider>
