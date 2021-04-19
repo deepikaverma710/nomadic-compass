@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Modal, Button } from 'react-bootstrap';
 import { firebaseAuth } from '../../context/ContextIndex';
 import { getPackages, getCartByUid, incQuantity, decQuantity, deleteCartListItem } from '../../network';
-
+import "./cart.css"
 
 
 const Cart = () => {
@@ -90,15 +90,13 @@ const Cart = () => {
 
   return (
     <div>
-      <div >
-        <Navigation />
-      </div>
-<div className="hero-image ">
+      <Navigation />
+<div className="container cart-inner">
 
-      <div className="table-responsive-lg bg-white">
+      <div className="table-responsive-lg dates-table table table-bordered table-hover ">
         <table className="table">
 
-          <thead>
+          <thead className="table-info">
             <tr>
               <th scope="col">Package</th>
               <th scope="col">Destination</th>
@@ -106,6 +104,7 @@ const Cart = () => {
               <th scope="col">Qty</th>
               <th scope="col">Price/Person</th>
               <th scope="col">Total Price</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -136,13 +135,13 @@ const Cart = () => {
                     <td>{a[0].budget}</td>
                     <td>{quantity[i] * a[0].budget}</td>
                     <td className="d-none">{total = total + (quantity[i] * a[0].budget)}</td>
-                    <td className="text-right">
+                    <td className="text-center">
                       <Link
                       to={{
                         pathname:  `/${activity[i]}/${destitaion[i]}/${a[0].packageName}`,
                         }}>
-                        <button>See details</button></Link>
-                    <button
+                        <button className="booking-button-two mr-3">See details</button></Link>
+                    <button className="booking-button-two"
                     onClick={(e)=>{e.preventDefault(); setReset(!reset); deleteCartListItem(cartId[i])}}>
                       Remove</button></td>
                   </tr>
@@ -155,7 +154,7 @@ const Cart = () => {
       </div>
       <div className="p-2 text-center">
        
-        <Button variant="primary" onClick={handleShow}>
+        <Button className="checkout-btn2" onClick={handleShow}>
           Checkout
       </Button>
       </div>

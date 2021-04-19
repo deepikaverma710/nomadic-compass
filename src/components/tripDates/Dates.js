@@ -34,30 +34,24 @@ const Dates = ({ details }) => {
   });
 
   return (
-    <div>
-      <div className="row">
-        <div className="col-md-12">
-          <div className="section-title text-center">
-            <div className="title-border">
-              <h1 className="text-white">
-                Trip <span>Date &amp; Price</span>
-              </h1>
+    <div className="mb-5 pb-5">
+      <div className="row mb-4">
+                <div className="col">
+                
+                <div className="section-title text-center">
+                    <div className="title-border">
+                        <h3><b>Trip <span>Dates and Prices</span></b></h3>
+                        <p className="inc-text-i">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dolor turpis, pulvinar varius dui<br /> id, convallis iaculis eros. Praesent porta lacinia elementum.</p>
+                    </div>
+                </div>
+                </div>
             </div>
-            <p className="text-white">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Pellentesque dolor turpis, pulvinar varius dui
-              <br /> id, convallis iaculis eros. Praesent porta lacinia
-              elementum.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="dates-background row">
+      <div className=" row">
         <div className="col-md-12">
           <form action="#" method="post">
-            <div className="table-content table-responsive">
-              <table className="dates-table">
-                <thead>
+            <div className="">
+              <table className="dates-table table table-bordered table-hover ">
+                <thead className="table-info">
                   <tr>
                     <td className="trip-date">
                       <div>Departure Dates</div>
@@ -70,9 +64,9 @@ const Dates = ({ details }) => {
                       <div>Action</div>
                     </td>
                   </tr>
-                  <tr>
+                  {/* <tr>
                     <td className="transparent" colspan="4"></td>
-                  </tr>
+                  </tr> */}
                 </thead>
                 <tbody>
                   {dates}

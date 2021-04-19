@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { firebaseAuth } from '../../context/ContextIndex'
 import "../navigation/Navigation.css";
-import { BsPencilSquare, BsFillLockFill } from "react-icons/bs";
+import { GrLogin } from "react-icons/gr";
 import { FaShoppingCart } from "react-icons/fa";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -10,17 +10,17 @@ const Navigation = (props) => {
   const { onLogOutClicked, cartCount, token } = useContext(firebaseAuth)
   let navbutton = 0
 
-  navbutton = (token ? <> <Link
+  navbutton = (token ? <> <Link className="cart-icon"
     to={{ pathname: `/cart` }}>
     <FaShoppingCart />
   </Link>
 
     <span>{cartCount}</span>
-    <BsFillLockFill />
-    <button onClick={onLogOutClicked}>Sign out</button>
-  </> : <><BsPencilSquare /><Link
+    {/* <BsFillLockFill /> */}
+    <button className="sign-out-btn" onClick={onLogOutClicked}>Sign out</button>
+  </> : <><Link className="register-btn"
     to={{ pathname: `/register` }}>
-    Register
+     Login
       </Link>  </>)
 
   return (

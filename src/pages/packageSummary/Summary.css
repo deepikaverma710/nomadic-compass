@@ -24,7 +24,75 @@
     margin-bottom: 100px;
 }
 
-.cart-button{
-    margin-top: 40px;
+.trip-info-left-text{
+    margin-top: 20px;
+}
+.add-to-cart-btn{
+    background: #165B9A;
+    color: #fff;
+    padding: 0 15px;
+    height: 40px;
     align-items: center;
+    font-size: 13.5px;
+    font-weight: 700;
+    border-radius: 3px;
+    border: none;
+    width: 100%;
+}
+.include-item {
+    
+}
+.include-icon svg{
+    font-size: 5rem;
+}
+.include-text h4{
+    font-size: 16px;
+    margin-top: 10px;;
+}
+.pac-details{
+    font-size: 14px;
+    line-height: 30px;
+}
+.details-info{
+    list-style: none;
+    font-size: 13px;
+    padding-left: 0;
+    /* display: flex;
+    flex-direction: row; */
+}
+.details-info li{
+    padding: 7px 0;
+    padding-right: 15px;
+}
+
+.details-info li svg{
+    padding-right:  2px;
+}
+.trp-dt-text{
+    font-size: 13px;
+}
+.trip-detail-wrap{
+    
+}
+.trip-detail-wrap>div{
+    width: 100%;
+}
+.btn-wrpa-in{
+    text-align: center;
+    width: 100%;
+}
+.inc-text-i{
+    font-size: 13px;
+}
+ul.tourPackage-info li {
+    list-style: none;
+    font-size: 13.5px;
+    padding: 6px 0;
+}
+ul.tourPackage-info{
+    padding-left: 0;
+}
+.pac-tourPackage{
+    font-size: 13.5px;
+    line-height: 25px;;
 }

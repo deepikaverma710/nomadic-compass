@@ -12,8 +12,11 @@ const Inclusion = ({ details }) => {
 
     return (
         <div>
-            <div className="col-md-12">
-                <h2><b>{details.packageName}</b></h2>
+            
+            <div className="row">
+            
+            <div className="col-md-7">
+            <h1 className="package-heading"><b>{details.packageName}</b></h1> 
                 <div className="trip-detail-wrap">
                     <div className="trip-info-left-text">
                         <div className="section-title ">
@@ -43,17 +46,28 @@ const Inclusion = ({ details }) => {
                         </div>
                         <p className="trp-dt-text">CAD ${details.budget}</p>
                     </div>
-                </div>
-                <div className="btn-wrpa-in">
-                    <div className="button  text-center mt-4 mb-5">
-                        <a className="search-btn p-2">Book this trip</a>
+                    <div className="btn-wrpa-in">
+                    <div className="button  btn-block text-center mt-4 mb-5">
+                        {/* <a  href className="search-btn p-2 text-center">Book this trip</a> */}
                     </div>
                 </div>
+                </div>
+                
+                
+            </div>
+            <div className="col-md-5">
+                <img src="https://isteam.wsimg.com/ip/58c246b7-81ca-45c1-941a-f72130606cf9/IMG_7293.JPG/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true" alt="activities" className="img-fluid"/>
+            </div>
+            </div>
+            <div className="row my-5">
+                <div className="col mt-5">
+                
                 <div className="section-title text-center">
                     <div className="title-border">
                         <h3><b>Trip <span>Inclusions</span></b></h3>
                         <p className="inc-text-i">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dolor turpis, pulvinar varius dui<br /> id, convallis iaculis eros. Praesent porta lacinia elementum.</p>
                     </div>
+                </div>
                 </div>
             </div>
             <div className="row mt-5" >

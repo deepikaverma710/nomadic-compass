@@ -14,3 +14,23 @@
     opacity: 0.6;
     color: #ffffff;
 }
+.dates-table{
+    font-size: 14px;
+}
+.dates-table tr td{
+    vertical-align: middle!important;
+}
+.dates-table thead{
+    font-weight: 600;
+ }
+ .booking-button-two{
+    background: #165B9A;
+    color: #fff;
+    padding: 0 15px;
+    height: 30px;
+    align-items: center;
+    font-size: 13.5px;
+    font-weight: 700;
+    border-radius: 3px;
+    border: none;
+ }

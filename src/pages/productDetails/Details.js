@@ -26,7 +26,7 @@ const Details = (props) => {
 
 
   return (
-    <div className="">
+    <div className="pb-4">
       <Navigation></Navigation>
       <div>
         <div className="trip-information">
@@ -39,7 +39,7 @@ const Details = (props) => {
             <Inclusion details={dates} />
           </div>
         </div>
-        <div className="trip-dates section-padding">
+        <div className="trip-dates ">
           <div className="container">
             {dates.dates && <Dates details={dates.dates} />}
           </div>

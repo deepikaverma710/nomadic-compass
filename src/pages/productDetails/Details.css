@@ -26,12 +26,12 @@
 .trip-inclusions{
     background-color: #ffffff;
     padding-bottom: 96px;
-    padding-top: 100px;
+    padding-top: 50px;
     position: relative;
 }
 
 .trip-dates{
-    background: rgba(0, 0, 0, 0) url("../../images/camping2.jpg") repeat scroll center top / cover;
+    /* background: rgba(0, 0, 0, 0) url("../../images/camping2.jpg") repeat scroll center top / cover; */
 }
 
 .section-padding{
@@ -40,3 +40,12 @@
 }
 
 
+.package-heading{
+    padding-left: 0px;
+    font-weight: 700;
+}
+.search-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
