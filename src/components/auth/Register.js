@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import {firebaseAuth} from '../../context/ContextIndex'
 import { useHistory } from "react-router-dom";
+import Navigation from "../../components/navigation/Navigation"
 
 const Register = (props) => {
     let history = useHistory();
@@ -20,6 +21,11 @@ const Register = (props) => {
     
     return (
         <>
+        <div >
+        <Navigation />
+      </div>
+      <div  className="hero-image ">
+        <div className="bg-white">
         <h1 className="text-center mt-2">Register</h1>
     <div className="container border p-4" >
     <form onSubmit={onInputSubmit}  >
@@ -56,10 +62,12 @@ const Register = (props) => {
               Have an account?
               <button 
               className="mt-2"
-              onClick={(e)=>{e.preventDefault();props.history.push('/signin')}}>
+              onClick={(e)=>{e.preventDefault();props.history.push('/login')}}>
                   Login
                   </button>
                   </p>
+                  </div>
+                  </div>
                   </div>
                   </>
                   );
