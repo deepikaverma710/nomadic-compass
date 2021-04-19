@@ -26,7 +26,7 @@ Users are able to:
 - build a service provider role who can upolad packages.
 - Form to upload the packages.
 
-#### Nice to have feautres:
+#### Nice to have features:
 - Create a photogallery bucket by using GridFS from MongoAtlas for all tour packages
 - Consume a Google API and create maps for the tour packages
 - Create user and service provider profile. 
