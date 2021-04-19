@@ -23,7 +23,7 @@ body, html {
     position: fixed!important;
     z-index: 1000;
     width: 100%;
-    background: rgba(0,0,0,0.5)!important;
+    background: rgba(22,91,154,0.8)!important;
     color: #fff!important;
     display: flex!important;
     justify-content: space-between!important;
@@ -47,4 +47,55 @@ body, html {
 .container{
     margin-left: auto;
     margin-top: auto;
+}
+.cart-icon{
+    color: #fff;
+}
+
+.cart-icon:hover, .cart-icon:active, .cart-icon:focus{
+    color: #fff;
+}
+.header-text{
+    position: relative!important;
+}
+
+.header-text>span {
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    background: #007bff;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -5px;
+    left: 13px;
+}
+.register-btn{
+    padding-right: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff!important;
+    text-decoration: none;
+}
+.register-btn:hover, .register-btn:active, .register-btn:focus{
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff!important;
+    text-decoration: none;
+    padding-right: 15px;
+}
+.register-btn svg{
+    color: #fff!important;
+}
+.sign-out-btn{
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff!important;
+    padding: 0 18px!important;
 }

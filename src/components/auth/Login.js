@@ -26,10 +26,10 @@ const Login = (props) => {
       <div >
         <Navigation />
       </div>
-      <div className="hero-image ">
-        <div className="bg-white">
-          <h1 className="text-center mt-2">Login</h1>
-          <div className="container border p-4" >
+      <div  className="register-wrap">
+        <div className="register-wrap-inner">
+        <h3 className="text-left mt-2 register-head">Login</h3>
+          <div className="container " >
             <form onSubmit={onInputSubmit}  >
               <label
                 htmlFor="email"
@@ -55,15 +55,15 @@ const Login = (props) => {
                 placeholder='password'
                 value={inputs.password}
               />
-              <button className="mt-2  justify-content-center">
+              <button className="mt-4 mb-3 justify-content-center">
                 Login
           </button>
               {errors.length > 0 ? errors.map(error => <p style={{ color: 'red' }}>{error}</p>) : null}
             </form>
-            <p>
+            <p className="form-links">
               Have an account?
               <button
-                className="mt-2"
+                className=" form-links-inner"
                 onClick={(e) => { e.preventDefault(); props.history.push('/register') }}>
                 Register
                   </button>
