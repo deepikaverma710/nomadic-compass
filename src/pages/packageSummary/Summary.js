@@ -45,6 +45,7 @@ const Summary = () => {
                             <li className=""><span>Finish- </span>{tourPackage.finishLocation}</li>
                             <li className=""><span>Min group size- </span>{tourPackage.groupSize}</li>
                             <li className=""><span>Level- </span>{tourPackage.activityLevel}</li>
+                            <li className=""><span>Inclusions- </span>{tourPackage.activityInclusions}</li>
                         </ul>
                     </div>
                 </div>
